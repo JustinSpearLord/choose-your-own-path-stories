@@ -1,0 +1,97 @@
+.drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 22px 16px;
+  background: var(--panel-2);
+  border: 2px dashed var(--handle);
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.dropIcon {
+  color: var(--accent);
+  display: flex;
+}
+
+.dropTitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cover {
+  width: 100%;
+  height: 80px;
+}
+
+.previewBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.previewHead {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.previewTitle {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.previewMeta {
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.summary {
+  font-family: var(--font-story);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.cast {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.face {
+  display: block;
+  border: 2px solid var(--border);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  background: var(--panel-2);
+  border-radius: 2px;
+}
+
+.factValue {
+  font-family: var(--font-title);
+  font-size: 18px;
+}
+
+.help {
+  justify-content: center;
+  align-self: center;
+}

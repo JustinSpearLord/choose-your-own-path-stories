@@ -1,0 +1,131 @@
+.page {
+  --map-faint: var(--border-strong);
+  --map-other: var(--muted);
+}
+
+.legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.legend > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swLatest,
+.swOther {
+  width: 18px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.swOther {
+  background: var(--map-other);
+}
+
+.swUnknown {
+  width: 10px;
+  height: 10px;
+  border: 2px dashed var(--map-faint);
+}
+
+.mapWrap {
+  position: relative;
+  background: var(--panel-2);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.viewport {
+  touch-action: none;
+  cursor: grab;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node:focus-visible {
+  outline: none;
+}
+
+.node:focus-visible rect:nth-of-type(2) {
+  stroke: var(--text);
+  stroke-width: 3px;
+}
+
+.nodeText {
+  font-family: var(--font-title);
+  font-size: 12px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.endLabel {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.zoom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 6px;
+  border-top: 2px solid var(--border);
+}
+
+.zoomBtn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  background: var(--panel);
+  border: 2px solid var(--border-strong);
+  border-radius: 4px;
+  color: var(--panel-text);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: var(--panel);
+  color: var(--panel-text);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  --muted: var(--panel-muted);
+  --bg: var(--panel-2);
+}
+
+.detailTitle {
+  font-family: var(--font-story);
+  font-size: 19px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.noteText {
+  font-family: var(--font-story);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

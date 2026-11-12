@@ -1,0 +1,41 @@
+.name {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px;
+  background: var(--panel-2);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.side[data-new='true'] {
+  background: var(--accent-tint);
+  border-color: var(--accent-shadow);
+}
+
+.sideLabel {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.version {
+  font-family: var(--font-title);
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}

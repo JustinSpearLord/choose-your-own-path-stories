@@ -1,5 +1,5 @@
 // The whole import check for one file: read it, parse it, validate it.
-import { loadStoryBytes } from './load';
+import { type LoadedFile, loadStoryBytes } from './load';
 import type { ImageMeta, Issue, Story, StoryStats } from './types';
 import { asStory, validateStory } from './validate';
 
@@ -17,13 +17,13 @@ export interface CheckedFile {
   sizeBytes: number;
 }
 
-export function checkStoryBytes(bytes: Uint8Array): CheckedFile {
-  const loaded = loadStoryBytes(bytes);
+/** Parses and validates a file that has already been read with `loadStoryBytes`. */
+export function checkLoaded(loaded: LoadedFile, sizeBytes: number): CheckedFile {
   const base = {
     isPackage: loaded.isPackage,
     images: loaded.images,
     imageMeta: loaded.imageMeta,
-    sizeBytes: bytes.length,
+    sizeBytes,
   };
   const errors: Issue[] = loaded.errors.map((message) => ({ message }));
   const noStats = { scenes: 0, endings: 0, decisions: 0, images: loaded.imageMeta.size };
@@ -47,6 +47,10 @@ export function checkStoryBytes(bytes: Uint8Array): CheckedFile {
     warnings: result.warnings,
     stats: result.stats,
   };
+}
+
+export function checkStoryBytes(bytes: Uint8Array): CheckedFile {
+  return checkLoaded(loadStoryBytes(bytes), bytes.length);
 }
 
 export interface ParsedFile extends CheckedFile {
