@@ -327,7 +327,7 @@ A saved playthrough exports in two forms. `.json` is for tools: it can be re-ope
 }
 ```
 
-`steps` runs in play order, one per scene visited, ending with the ending scene (no `choice`). An unfinished run omits `finished` and `ending`, and its last step has no `choice`. `notes[].passage` is the position in that scene's `text`, counting from 0. `skipped` copies the choices not taken, so the file still makes sense without the story beside it.
+`steps` runs in play order, one per scene visited, ending with the ending scene (no `choice`). An unfinished run omits `finished` and `ending`, and its last step has no `choice`. `notes[].passage` is the position in that scene's `text`, counting from 0. A note that belongs to the whole scene rather than one passage (this happens when a story update rewrites the passage it was on) has `"passage": null`. `skipped` copies the choices not taken, so the file still makes sense without the story beside it.
 
 ### Text file (`.md`)
 

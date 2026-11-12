@@ -12,11 +12,18 @@ An offline, installable web app (PWA) for playing branching stories in the `ques
 
 Fill these in during milestone 1 and keep them current:
 
+- `npm install`, then once `npx playwright install chromium webkit`: setup
+
 - `npm run dev`: local dev server
 - `npm test`: unit tests (Vitest), including validator parity with `tools/validate_quest.py`
-- `npm run test:e2e`: Playwright on iPhone 13 and Pixel 7 profiles
+- `npm run test:e2e`: Playwright on iPhone 13 and Pixel 7 profiles, against the production build. It reuses a preview server on port 4173 if one is running, so run `npm run build` first in that case
+- `npm run lint`: ESLint; `npm run format`: Prettier
+- `npm run preview`: serve the production build on port 4173 (add `-- --host` to open it from a phone on the same Wi-Fi)
+- `npm run deploy:gh-pages`: publish `dist/` to the `gh-pages` branch of `origin`
 - `npm run build`: production build, including the service worker
-- `python3 tools/validate_quest.py <files>`: reference validator
+- `python3 tools/validate_quest.py <files>`: reference validator (`python` on Windows)
+- `python tools/make_icons.py`: redraw the app icons
+- `MANUAL_TESTS.md`: the by-hand test list for phones
 
 ## Rules
 

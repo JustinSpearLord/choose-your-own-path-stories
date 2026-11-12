@@ -56,10 +56,12 @@ function CoverImage({ src, pixel }: { src: string; pixel: boolean }) {
     style = { ...style, imageRendering: 'pixelated' };
     if (natural && size && size.w > 0 && size.h > 0) {
       const dpr = window.devicePixelRatio || 1;
-      const k = Math.max(1, Math.ceil(Math.max((size.w * dpr) / natural.w, (size.h * dpr) / natural.h) - 0.001));
+      const exact = Math.max((size.w * dpr) / natural.w, (size.h * dpr) / natural.h);
+      const k = Math.max(1, Math.ceil(exact - 0.001));
       const w = (natural.w * k) / dpr;
       const h = (natural.h * k) / dpr;
-      style = {
+      // A whole step that would crop away too much of the picture is not worth it: fill the box instead.
+      if (k / exact <= 1.3) style = {
         position: 'absolute',
         left: (size.w - w) / 2,
         top: (size.h - h) / 2,
