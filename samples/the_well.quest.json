@@ -1,0 +1,79 @@
+{
+  "format": "quest/1",
+  "id": "the-well",
+  "title": "The Well",
+  "author": "Your name",
+  "start": "well",
+  "characters": [
+    {
+      "id": "voice",
+      "name": "The Voice",
+      "color": "#7A6FB0"
+    }
+  ],
+  "scenes": {
+    "well": {
+      "title": "The old well",
+      "art": "village_night",
+      "text": [
+        "Something is calling.",
+        {
+          "speaker": "voice",
+          "line": "Come down."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Climb down the rope",
+          "to": "bottom"
+        },
+        {
+          "text": "Walk away",
+          "to": "end-home"
+        }
+      ]
+    },
+    "bottom": {
+      "title": "The bottom",
+      "art": "cave",
+      "text": [
+        "A small door."
+      ],
+      "prompt": "?",
+      "choices": [
+        {
+          "text": "Knock",
+          "to": "end-door"
+        },
+        {
+          "text": "Answer",
+          "to": "end-door"
+        },
+        {
+          "text": "Climb back up",
+          "to": "end-home"
+        }
+      ]
+    },
+    "end-door": {
+      "art": "cave",
+      "text": [
+        "Daylight."
+      ],
+      "ending": {
+        "title": "The Other Side",
+        "tone": "good"
+      }
+    },
+    "end-home": {
+      "art": "village_night",
+      "text": [
+        "Filled in."
+      ],
+      "ending": {
+        "title": "Never Knowing",
+        "tone": "neutral"
+      }
+    }
+  }
+}

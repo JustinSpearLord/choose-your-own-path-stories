@@ -1,0 +1,39 @@
+{
+  "format": "quest/1",
+  "id": "loop",
+  "title": "Loop",
+  "author": "t",
+  "start": "a",
+  "scenes": {
+    "a": {
+      "text": [
+        "A"
+      ],
+      "choices": [
+        {
+          "text": "b",
+          "to": "b"
+        },
+        {
+          "text": "a",
+          "to": "a"
+        }
+      ]
+    },
+    "b": {
+      "text": [
+        "B"
+      ],
+      "choices": [
+        {
+          "text": "a",
+          "to": "a"
+        },
+        {
+          "text": "b",
+          "to": "b"
+        }
+      ]
+    }
+  }
+}

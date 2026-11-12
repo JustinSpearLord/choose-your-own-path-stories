@@ -1,0 +1,151 @@
+{
+  "samples/lantern_road.quest.json": {
+    "errors": [],
+    "warnings": []
+  },
+  "samples/lantern_road.quest.zip": {
+    "errors": [],
+    "warnings": []
+  },
+  "samples/the_well.quest.json": {
+    "errors": [],
+    "warnings": []
+  },
+  "tests/fixtures/bad-ending.quest.json": {
+    "errors": [
+      "scene 'end-ash': ending tone must be good, bad or neutral",
+      "scene 'end-bell': ending needs a title"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/bad-header.quest.json": {
+    "errors": [
+      "format must be \"quest/1\"",
+      "missing author",
+      "start 'nowhere' is not a scene"
+    ],
+    "warnings": [
+      "scene 'road' is unreachable from start",
+      "scene 'relight' is unreachable from start",
+      "scene 'hut' is unreachable from start",
+      "scene 'hut-talk' is unreachable from start",
+      "scene 'ferry' is unreachable from start",
+      "scene 'ferry-truth' is unreachable from start",
+      "scene 'ford' is unreachable from start",
+      "scene 'jetty' is unreachable from start",
+      "scene 'reeds' is unreachable from start",
+      "scene 'abbess' is unreachable from start",
+      "scene 'abbey' is unreachable from start",
+      "scene 'end-village' is unreachable from start",
+      "scene 'end-current' is unreachable from start",
+      "scene 'end-ash' is unreachable from start",
+      "scene 'end-silent' is unreachable from start",
+      "scene 'end-bell' is unreachable from start",
+      "scene 'end-light' is unreachable from start"
+    ]
+  },
+  "tests/fixtures/bad-scene-id.quest.json": {
+    "errors": [
+      "scene 'hut': choice 'Skip the ferry and cross at the ford upstream' points to missing scene 'ford'",
+      "scene 'hut-talk': choice 'Leave him and cross at the ford' points to missing scene 'ford'",
+      "scene 'Ferry Crossing': bad id"
+    ],
+    "warnings": [
+      "scene 'abbey' is unreachable from start",
+      "scene 'end-current' is unreachable from start",
+      "scene 'Ferry Crossing' is unreachable from start"
+    ]
+  },
+  "tests/fixtures/bad-theme.quest.json": {
+    "errors": [],
+    "warnings": [
+      "theme: unknown preset 'sunset', using dusk",
+      "theme: accent 'blue' is not #RRGGBB, ignored",
+      "theme: unknown color 'glow', ignored",
+      "theme: unknown font 'comic', using serif",
+      "theme: text on background is 1.3:1, the app will adjust text to 4.5:1"
+    ]
+  },
+  "tests/fixtures/broken-package.quest.zip": {
+    "errors": [
+      "unsafe path in package: '../evil.txt'",
+      "image 'images/fake.png' can't be read as an image"
+    ],
+    "warnings": [
+      "scene 'road': 'images/portraits/wren.png' is 48x48, not about 16:9, it will be cropped",
+      "scene 'ferry': image 'images/Ferry.png' is not in the package (did you mean 'images/ferry.png'? case must match)",
+      "scene 'reeds': image 'images/reeds.png' is not in the package",
+      "scene 'end-silent': image 'images/reeds.png' is not in the package",
+      "image 'images/extra.png' is never used",
+      "image 'images/fake.png' is never used"
+    ]
+  },
+  "tests/fixtures/choices-and-ending.quest.json": {
+    "errors": [
+      "scene 'jetty': needs either choices or an ending, not both"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/four-choices.quest.json": {
+    "errors": [
+      "scene 'ferry': has 4 choices, needs 2 or 3"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/image-path-in-json.quest.json": {
+    "errors": [],
+    "warnings": [
+      "scene 'road': 'images/road.png' is an image path, but a .quest.json can't carry images"
+    ]
+  },
+  "tests/fixtures/missing-target.quest.json": {
+    "errors": [
+      "scene 'ferry': choice 'Land the ferry at the jetty' points to missing scene 'jetty-typo'"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/no-ending.quest.json": {
+    "errors": [
+      "no ending scenes"
+    ],
+    "warnings": [
+      "scene 'a' can never reach an ending",
+      "scene 'b' can never reach an ending"
+    ]
+  },
+  "tests/fixtures/no-story-json.quest.zip": {
+    "errors": [
+      "package has no story.json at the top level"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/not-json.quest.json": {
+    "errors": [
+      "not valid JSON: Expecting property name enclosed in double quotes: line 1 column 42 (char 41)"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/one-choice.quest.json": {
+    "errors": [
+      "scene 'road': has 1 choices, needs 2 or 3"
+    ],
+    "warnings": [
+      "scene 'relight' is unreachable from start",
+      "scene 'end-village' is unreachable from start"
+    ]
+  },
+  "tests/fixtures/unknown-speaker.quest.json": {
+    "errors": [
+      "scene 'hut' passage 3: unknown speaker 'ghost'"
+    ],
+    "warnings": []
+  },
+  "tests/fixtures/warnings-only.quest.json": {
+    "errors": [],
+    "warnings": [
+      "scene 'orphan' passage 0: over 600 characters",
+      "scene 'orphan': unknown art 'swamp_castle', will show default",
+      "scene 'orphan' is unreachable from start"
+    ]
+  }
+}

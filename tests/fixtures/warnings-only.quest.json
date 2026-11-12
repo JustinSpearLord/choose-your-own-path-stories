@@ -1,0 +1,387 @@
+{
+  "format": "quest/1",
+  "id": "lantern-road",
+  "title": "The Lantern Road",
+  "author": "Quest Journal sample",
+  "version": "1.0",
+  "summary": "The lanterns on the river road have burned for forty years. Tonight they are going out, one by one, and the dark is moving toward the water.",
+  "cover": "road_dusk",
+  "theme": {
+    "preset": "dusk",
+    "font": "serif"
+  },
+  "start": "road",
+  "characters": [
+    {
+      "id": "wren",
+      "name": "Wren",
+      "color": "#3F7D5C",
+      "about": "Your fellow ranger. Terse, loyal, distrusts anyone who lives by the river."
+    },
+    {
+      "id": "maddox",
+      "name": "Maddox",
+      "color": "#8A8494",
+      "about": "Old ferryman. Owes money to the abbey and hates that he does."
+    },
+    {
+      "id": "abbess",
+      "name": "The Ashen Abbess",
+      "color": "#9C4A5A",
+      "about": "Head of the abbey across the river. Calm, certain, grieving."
+    }
+  ],
+  "scenes": {
+    "road": {
+      "title": "The Lantern Road",
+      "art": "road_dusk",
+      "text": [
+        "You and Wren walk the river road at dusk, as rangers have every night for forty years. Every hundred paces stands an iron post with a lantern on top.",
+        "Tonight the lantern ahead of you is dark. So is the one past it, and the one past that, in a line running down toward the river.",
+        {
+          "speaker": "wren",
+          "line": "Those don't go out. Not ever. Someone is putting them out, and they're heading for the water."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Follow the dark lanterns to the river",
+          "to": "hut"
+        },
+        {
+          "text": "Relight this lantern before going on",
+          "to": "relight"
+        }
+      ]
+    },
+    "relight": {
+      "title": "The cold lantern",
+      "art": "road_dusk",
+      "text": [
+        "You climb the post. The lantern's oil has been poured out, not burned, and the glass is smeared with a grey handprint that crumbles like ash when you touch it.",
+        "You refill it from your flask and strike a light. The road behind you glows again. Ahead, the dark keeps moving.",
+        {
+          "speaker": "wren",
+          "line": "That's one. There are forty more between here and the river."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Follow the ash prints to the river",
+          "to": "hut"
+        },
+        {
+          "text": "Turn back and warn the village",
+          "to": "end-village"
+        }
+      ]
+    },
+    "hut": {
+      "title": "Maddox's hut",
+      "art": "house_interior",
+      "text": [
+        "The ferryman's hut sits at the bottom of the road, the last dark lantern hanging over its door. Maddox is mending a net by the fire and does not look up.",
+        {
+          "speaker": "maddox",
+          "line": "Ferry costs double after dark. Company costs more."
+        },
+        "There is grey ash on the floor by his boots."
+      ],
+      "choices": [
+        {
+          "text": "Have Maddox take you across now",
+          "to": "ferry"
+        },
+        {
+          "text": "Ask him who he carried across last night",
+          "to": "hut-talk"
+        },
+        {
+          "text": "Skip the ferry and cross at the ford upstream",
+          "to": "ford"
+        }
+      ]
+    },
+    "hut-talk": {
+      "title": "What Maddox saw",
+      "art": "house_interior",
+      "text": [
+        "Maddox stops mending. For a long moment the only sound is the fire.",
+        {
+          "speaker": "maddox",
+          "line": "A woman in grey. The abbey paid her fare, and paid me well not to remember her. She had ash on her hands, all the way to the elbow."
+        },
+        {
+          "speaker": "wren",
+          "line": "The Abbess. I knew that place was rotten."
+        },
+        {
+          "speaker": "maddox",
+          "line": "You don't know anything about that place."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Take the ferry with Maddox",
+          "to": "ferry"
+        },
+        {
+          "text": "Leave him and cross at the ford",
+          "to": "ford"
+        }
+      ]
+    },
+    "ferry": {
+      "title": "Ferry crossing",
+      "art": "river_dusk",
+      "text": [
+        "The ferry groans against its rope as Maddox poles you out into the fog.",
+        "Halfway across, the lantern on the far jetty gutters and goes dark. It is the last one on the road.",
+        {
+          "speaker": "wren",
+          "line": "That light's burned for forty years. Someone put it out."
+        },
+        {
+          "speaker": "maddox",
+          "line": "Then someone's waiting for us. Your call, ranger."
+        }
+      ],
+      "prompt": "The far bank is dark. What do you do?",
+      "choices": [
+        {
+          "text": "Land the ferry at the jetty",
+          "to": "jetty"
+        },
+        {
+          "text": "Douse your lantern and drift in",
+          "to": "reeds"
+        },
+        {
+          "text": "Make Maddox tell you what he knows",
+          "to": "ferry-truth"
+        }
+      ]
+    },
+    "ferry-truth": {
+      "title": "Mid-river",
+      "art": "river_dusk",
+      "text": [
+        "You catch the pole and hold it still. The ferry turns slowly in the current.",
+        {
+          "speaker": "maddox",
+          "line": "Forty years ago the bell tower fell into this river during a flood. Thirty people were inside, sheltering. The lanterns went up the next week."
+        },
+        {
+          "speaker": "maddox",
+          "line": "The abbey says the light keeps the dead asleep. The Abbess's sister was one of the thirty. I think she's tired of them sleeping."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Land at the jetty and face her",
+          "to": "jetty"
+        },
+        {
+          "text": "Douse your lantern and drift in",
+          "to": "reeds"
+        }
+      ]
+    },
+    "ford": {
+      "title": "The ford",
+      "art": "river",
+      "text": [
+        "Upstream, the river runs wide and shallow over stones. You rope yourself to Wren and wade in.",
+        "Halfway across the bottom drops away. Wren goes under, and the rope snaps tight around your waist, dragging you toward the deep water.",
+        "Downstream, you hear something under the river: a long, low note, like a bell rung very slowly."
+      ],
+      "choices": [
+        {
+          "text": "Brace and haul Wren back up",
+          "to": "abbey"
+        },
+        {
+          "text": "Cut the rope and save yourself",
+          "to": "end-current"
+        }
+      ]
+    },
+    "jetty": {
+      "title": "The jetty",
+      "art": "harbor",
+      "text": [
+        "The ferry bumps the jetty. A tall woman in grey robes stands by the dead lantern, ash to her elbows, a dozen hooded figures behind her.",
+        {
+          "speaker": "abbess",
+          "line": "Rangers. You are late, and you are welcome. Put your weapons down and I will tell you why the road has gone dark."
+        },
+        {
+          "speaker": "wren",
+          "line": "Or we put them through you and relight it ourselves."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lower your weapon and hear her out",
+          "to": "abbess"
+        },
+        {
+          "text": "Draw steel and rush the lantern",
+          "to": "end-ash"
+        }
+      ]
+    },
+    "reeds": {
+      "title": "Into the reeds",
+      "art": "marsh",
+      "text": [
+        "You pinch out your lantern. Maddox lets the ferry drift sideways into the reeds below the jetty, silent as a log.",
+        "Through the stalks you see the Abbess alone at the water's edge, pouring lantern oil into the river. Where it touches the surface, the water glows faintly from underneath.",
+        {
+          "speaker": "wren",
+          "line": "(whispering) She hasn't seen us."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Stay hidden and watch",
+          "to": "end-silent"
+        },
+        {
+          "text": "Step out of the reeds and call to her",
+          "to": "abbess"
+        }
+      ]
+    },
+    "abbess": {
+      "title": "The Ashen Abbess",
+      "art": "abbey",
+      "text": [
+        {
+          "speaker": "abbess",
+          "line": "Thirty people drowned in the bell tower. My sister was one. The lanterns do not keep the dead asleep. They keep them from finding their way home."
+        },
+        {
+          "speaker": "abbess",
+          "line": "When the last light is out, the bell will ring once, and they will walk up out of the river. Not to harm anyone. Only to be buried."
+        },
+        "Behind her, the hooded figures are holding the last full flask of lantern oil. One lantern left on the whole road still holds its glass: the one over the abbey gate."
+      ],
+      "prompt": "The last lantern is yours to decide.",
+      "choices": [
+        {
+          "text": "Help her put out the last lantern",
+          "to": "end-bell"
+        },
+        {
+          "text": "Relight the road and send her back inside",
+          "to": "end-light"
+        }
+      ]
+    },
+    "abbey": {
+      "title": "The bell tower",
+      "art": "bell_tower",
+      "text": [
+        "You drag Wren up onto the far bank, both of you coughing river water. Ahead, the abbey's new bell tower rises against the clouds.",
+        "Every lantern you can see is dark. Inside the tower, someone is climbing the stairs with a candle.",
+        {
+          "speaker": "wren",
+          "line": "Whatever she's doing up there, she's nearly done."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Climb after her and see it through",
+          "to": "end-bell"
+        },
+        {
+          "text": "Cut the bell rope before she reaches it",
+          "to": "end-light"
+        }
+      ]
+    },
+    "end-village": {
+      "title": "Word before dawn",
+      "art": "village_night",
+      "text": [
+        "You run the road back to the village and bang on doors until the square is full of lamps.",
+        "By the time a crowd reaches the river, every lantern is out and the far bank is quiet. Whatever happened there, it is finished, and no one will tell you what it was."
+      ],
+      "ending": {
+        "title": "Word Before Dawn",
+        "tone": "neutral"
+      }
+    },
+    "end-current": {
+      "title": "The cold current",
+      "art": "river",
+      "text": [
+        "The rope parts. Wren is gone in a heartbeat, swept into the dark water toward the sound of the bell.",
+        "You crawl out on the far bank alone. Every lantern on the road is dark, and you never walk it again."
+      ],
+      "ending": {
+        "title": "The Cold Current",
+        "tone": "bad"
+      }
+    },
+    "end-ash": {
+      "title": "Ash on the jetty",
+      "art": "harbor",
+      "text": [
+        "You reach the lantern. So do the hooded figures. In the struggle the last flask of oil shatters across the boards, and someone's candle finds it.",
+        "The jetty burns until morning. When the smoke clears, the Abbess is gone, the ferry is gone, and the river is very quiet."
+      ],
+      "ending": {
+        "title": "Ash on the Jetty",
+        "tone": "bad"
+      }
+    },
+    "end-silent": {
+      "title": "The silent landing",
+      "art": "marsh",
+      "text": [
+        "You touch the bank without a sound and lie still in the reeds.",
+        "The Abbess empties the last flask, kneels, and waits. Far out in the river, something rises toward the glowing water. She hasn't heard you. Not yet."
+      ],
+      "ending": {
+        "title": "The Silent Landing",
+        "tone": "neutral"
+      }
+    },
+    "end-bell": {
+      "title": "The bell rings",
+      "art": "bell_tower",
+      "text": [
+        "The last light goes out. Under the river, the drowned bell rings once, so deep you feel it in your teeth.",
+        "One by one, thirty figures walk up out of the water and stand quietly on the bank. The Abbess goes down to meet the smallest of them. By sunrise the abbey graveyard has thirty new stones."
+      ],
+      "ending": {
+        "title": "The Bell Rings",
+        "tone": "good"
+      }
+    },
+    "end-light": {
+      "title": "The road stays lit",
+      "art": "road",
+      "text": [
+        "You relight the lanterns one by one, all the way back up the road. The Abbess watches from the abbey gate and says nothing.",
+        "The road is safe again. But on still nights, walking past the river, you sometimes hear the bell, very faintly, ringing for someone who never comes."
+      ],
+      "ending": {
+        "title": "The Road Stays Lit",
+        "tone": "neutral"
+      }
+    },
+    "orphan": {
+      "art": "swamp_castle",
+      "text": [
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ],
+      "ending": {
+        "title": "Orphan",
+        "tone": "neutral"
+      }
+    }
+  }
+}

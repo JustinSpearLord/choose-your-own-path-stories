@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Make a story</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Literata:opsz,wght@7..72,400;7..72,500&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E8B44C}a:hover{color:#F3CD7A}
+</style>
+</helmet>
+<div style="width: 390px; height: 1520px; box-sizing: border-box; padding: 20px 20px 28px; background: #15131C; color: #EDE8F5; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 16px; overflow: hidden">
+
+<div style="display: flex; align-items: center; gap: 12px">
+<a href="Main.dc.html" aria-label="Back to library" style="width: 44px; height: 44px; flex: none; display: flex; align-items: center; justify-content: center; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px; color: #EDE8F5">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</a>
+<h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 22px; font-weight: 500; letter-spacing: 1px">MAKE A STORY</h1>
+</div>
+
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #C9C2D8">Every story is a <strong style="color: #EDE8F5">.quest.json</strong> file, or a <strong style="color: #EDE8F5">.quest.zip</strong> that also carries your own images. Write it yourself or have an AI write it, then send it to anyone who has the app.</p>
+
+<div role="img" aria-label="Write or generate, then share, then import and play" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px; text-align: center">
+<span style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: #E8B44C; color: #15131C; font-family: 'Pixelify Sans', monospace; font-size: 14px">{{s.n}}</span>
+<span style="font-size: 12px; font-weight: 600">{{s.title}}</span>
+<span style="font-size: 11px; color: #A79FB8">{{s.sub}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 6px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B44C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 17px; font-weight: 500">Write it yourself</h2>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #C9C2D8">Start from the template. It has a start scene, one decision and two endings to copy from.</p>
+<button style="height: 46px; background: #1C1925; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Download template</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px; background: #172624; border: 2px solid #3A5A55; border-radius: 6px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FE0D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"></path></svg>
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 17px; font-weight: 500">Generate with AI</h2>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #C9E9E2">Copy this prompt into any AI chat, add your idea, and save the reply as a .quest.json file.</p>
+<div style="padding: 10px 12px; background: #0F1A19; border: 2px solid #2A4440; border-radius: 4px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.5; color: #C9E9E2; white-space: pre-wrap">{{prompt}}</div>
+<button style="height: 46px; background: #5CC8B4; border: none; border-radius: 4px; color: #0F1F1C; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Copy prompt</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 6px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B44C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 17px; font-weight: 500">Add your own images</h2>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #C9C2D8">Put the story and an images folder in one zip and name it .quest.zip. Point any scene, cover or portrait at an image path. Scenes you leave on built-in art still work.</p>
+<div style="padding: 10px 12px; background: #15131C; border: 2px solid #2E2A3A; border-radius: 4px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.5; color: #D6D0E2; white-space: pre">{{tree}}</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 10px; background: #1C1925; border-radius: 4px">
+<span aria-hidden="true" style="width: 64px; height: 36px; background: #22304A; box-shadow: inset 0 -14px 0 #1B1726, inset 0 12px 0 #3A2E55"></span>
+<span style="font-size: 12px; font-weight: 600">Scene art</span>
+<span style="font-size: 11px; color: #A79FB8">16:9 · 160×90 or 320×180</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 10px; background: #1C1925; border-radius: 4px">
+<span aria-hidden="true" style="width: 36px; height: 36px; background: #E7B98F; box-shadow: inset 0 10px 0 #3F7D5C, inset 0 -10px 0 #2F5E45"></span>
+<span style="font-size: 12px; font-weight: 600">Portraits</span>
+<span style="font-size: 11px; color: #A79FB8">square · 32×32 or 48×48</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #A79FB8">PNG or WebP, up to 1 MB each. Small pixel images are scaled up crisp, with no blur.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 15px; font-weight: 500; letter-spacing: 1px">THE FORMAT</h2>
+<div style="padding: 10px 12px; background: #1C1925; border: 2px solid #2E2A3A; border-radius: 4px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.5; color: #D6D0E2; white-space: pre; overflow-x: auto">{{snippet}}</div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{rules}}" as="r" hint-placeholder-count="4">
+<li style="display: flex; gap: 8px; font-size: 13px; line-height: 1.4; color: #C9C2D8">
+<span aria-hidden="true" style="width: 6px; height: 6px; margin-top: 6px; flex: none; background: #E8B44C"></span>
+{{r}}
+</li>
+</sc-for>
+</ul>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1520}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const snippet = [
+      '{',
+      '  "format": "quest/1",',
+      '  "title": "The Lantern Road",',
+      '  "author": "Your name",',
+      '  "start": "ferry",',
+      '  "scenes": {',
+      '    "ferry": {',
+      '      "art": "river_dusk",',
+      '      "text": ["The ferry groans…",',
+      '               "Wren: Someone put it out."],',
+      '      "choices": [',
+      '        { "text": "Land the ferry", "to": "bank" },',
+      '        { "text": "Drift in silent", "to": "reeds" }',
+      '      ]',
+      '    },',
+      '    "home": { "ending": "Home before dawn",',
+      '              "text": ["…"] }',
+      '  }',
+      '}'
+    ].join('\n');
+    return {
+      snippet,
+      prompt: 'Write a branching choose-your-own-adventure story as a Quest Journal file (format quest/1). Every scene has 2 or 3 choices, or is an ending. Give it 20–40 scenes and 3 endings. Reply with only the JSON.\n\nMy idea: [YOUR STORY IDEA]',
+      steps: [
+        { n: '1', title: 'Write', sub: 'by hand or AI' },
+        { n: '2', title: 'Share', sub: 'send the file' },
+        { n: '3', title: 'Play', sub: 'import it here' }
+      ],
+      rules: [
+        'Each scene has 2 or 3 choices, or is an ending',
+        'Each choice’s "to" points to a scene id',
+        'Text is a list of passages, one note spot each',
+        '"art" is a built-in scene (forest, river_dusk, tavern…) or, in a .quest.zip, an image like images/ferry.png'
+      ],
+      tree: [
+        'my_story.quest.zip',
+        '├─ story.json',
+        '└─ images/',
+        '   ├─ cover.png',
+        '   ├─ ferry.png',
+        '   └─ portraits/',
+        '      └─ wren.png'
+      ].join('\n')
+    };
+  }
+}
+</script>
+</body>
+</html>

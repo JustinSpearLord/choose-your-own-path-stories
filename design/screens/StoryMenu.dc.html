@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story menu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Literata:opsz,wght@7..72,400;7..72,500&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E8B44C}a:hover{color:#F3CD7A}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 900px; box-sizing: border-box; background: #15131C; color: #EDE8F5; font-family: 'IBM Plex Sans', system-ui, sans-serif; overflow: hidden">
+
+<div aria-hidden="true" style="display: flex; flex-direction: column; gap: 12px; padding: 24px 20px; opacity: 0.35">
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 28px; font-weight: 700; color: #E8B44C">QUEST JOURNAL</span>
+<div style="height: 250px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 6px"></div>
+<div style="height: 48px; background: #201D29; border-radius: 4px"></div>
+<div style="height: 60px; background: #1C1925; border-radius: 4px"></div>
+<div style="height: 60px; background: #1C1925; border-radius: 4px"></div>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(8,7,12,0.6)"></div>
+
+<div role="dialog" aria-label="Saltmarsh Wake options" style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 14px; padding: 12px 20px 28px; background: #1C1925; border-top: 2px solid #3A3548; border-radius: 12px 12px 0 0">
+<span aria-hidden="true" style="align-self: center; width: 40px; height: 4px; background: #4A4458; border-radius: 2px"></span>
+
+<div style="display: flex; gap: 12px; align-items: center">
+<svg viewBox="0 0 16 16" width="64" height="64" shape-rendering="crispEdges" aria-hidden="true" style="flex: none; border: 2px solid #17303A">
+<rect width="16" height="16" fill="#2C4A50"></rect><rect y="0" width="16" height="5" fill="#3D6468"></rect><rect x="11" y="1" width="3" height="3" fill="#DDE8D8"></rect>
+<rect y="9" width="16" height="7" fill="#1C3438"></rect><rect x="6" y="4" width="4" height="7" fill="#141E22"></rect><rect x="7" y="2" width="2" height="2" fill="#141E22"></rect><rect x="7" y="6" width="2" height="2" fill="#5CC8B4"></rect>
+</svg>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 20px; font-weight: 500">Saltmarsh Wake</h1>
+<span style="font-size: 12px; color: #A79FB8">by Dana R. · version 1.2</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #C9C2D8">
+<span aria-hidden="true" style="display: flex"><span style="width: 10px; height: 12px; background: #0F1E24"></span><span style="width: 10px; height: 12px; background: #17303A"></span><span style="width: 10px; height: 12px; background: #E3F1F0"></span><span style="width: 10px; height: 12px; background: #5CC8B4"></span></span>
+Look: Tide (author’s)
+</span>
+</div>
+</div>
+
+<a href="Story.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 50px; background: #E8B44C; color: #15131C; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 0 #8A6420; font-size: 16px; font-weight: 600">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l12 8-12 8z"></path></svg>
+Play again from the start
+</a>
+
+<nav aria-label="Story options" style="display: flex; flex-direction: column; background: #201D29; border: 2px solid #2E2A3A; border-radius: 6px">
+<sc-for list="{{items}}" as="i" hint-placeholder-count="5">
+<a href="{{i.href}}" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 12px; border-bottom: 1px solid #2E2A3A; color: #EDE8F5; text-decoration: none">
+<span aria-hidden="true" style="width: 28px; height: 28px; flex: none; display: flex; align-items: center; justify-content: center; background: #2A2635; color: #E8B44C; font-family: 'Pixelify Sans', monospace; font-size: 14px">{{i.icon}}</span>
+<span style="flex: 1; display: flex; flex-direction: column">
+<span style="font-size: 15px; font-weight: 500">{{i.label}}</span>
+<span style="font-size: 12px; color: #A79FB8">{{i.meta}}</span>
+</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A79FB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</sc-for>
+</nav>
+
+<button style="display: flex; align-items: center; justify-content: center; height: 48px; background: transparent; border: 2px solid #5A2E2A; border-radius: 4px; color: #F0A08F; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Remove from library</button>
+<span style="font-size: 12px; color: #A79FB8; text-align: center">Removing keeps your exported files. Saved paths and notes on this phone are deleted.</span>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      items: [
+        { icon: '★', label: 'Endings found', meta: '2 of 3', href: 'Endings.dc.html' },
+        { icon: '⌥', label: 'Story map', meta: 'Unlocked: you finished the story', href: 'Map.dc.html' },
+        { icon: '≡', label: 'Saved paths', meta: '2 paths · 8 notes', href: 'Review.dc.html' },
+        { icon: '◐', label: 'Change look', meta: 'Tide · Book text', href: 'ImportStyle.dc.html' },
+        { icon: 'i', label: 'Story details', meta: '40 scenes · imported Nov 4', href: 'Update.dc.html' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

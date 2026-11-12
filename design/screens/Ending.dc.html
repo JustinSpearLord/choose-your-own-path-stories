@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story complete</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Literata:opsz,wght@7..72,400;7..72,500&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E8B44C}a:hover{color:#F3CD7A}
+</style>
+</helmet>
+<div style="width: 390px; height: 960px; box-sizing: border-box; padding: 0 20px 28px; background: #15131C; color: #EDE8F5; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 18px; overflow: hidden">
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 32px 0 4px; text-align: center">
+<svg viewBox="0 0 12 12" width="64" height="64" shape-rendering="crispEdges" aria-hidden="true">
+<rect x="5" y="0" width="2" height="2" fill="#0E0C14"></rect>
+<rect x="3" y="2" width="6" height="1" fill="#6B5A45"></rect>
+<rect x="2" y="3" width="8" height="1" fill="#6B5A45"></rect>
+<rect x="3" y="4" width="6" height="5" fill="#E8B44C"></rect>
+<rect x="4" y="5" width="2" height="2" fill="#F3E3B0"></rect>
+<rect x="2" y="9" width="8" height="1" fill="#6B5A45"></rect>
+<rect x="3" y="10" width="6" height="1" fill="#4A3D2F"></rect>
+</svg>
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 14px; letter-spacing: 3px; color: #E8B44C">THE END</span>
+<h1 style="margin: 0; font-family: 'Literata', Georgia, serif; font-size: 26px; font-weight: 500">The Silent Landing</h1>
+<p style="margin: 0; font-size: 13px; color: #A79FB8">The Lantern Road · ending 2 of 4 found</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 4px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px">
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 22px">{{s.value}}</span>
+<span style="font-size: 11px; color: #A79FB8">{{s.label}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 15px; font-weight: 500; letter-spacing: 1px">YOUR PATH</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<sc-for list="{{path}}" as="p" hint-placeholder-count="3">
+<li style="display: flex; gap: 12px">
+<span style="display: flex; flex-direction: column; align-items: center; flex: none; width: 14px">
+<span aria-hidden="true" style="width: 10px; height: 10px; margin-top: 5px; background: #E8B44C"></span>
+<span aria-hidden="true" style="flex: 1; width: 2px; background: #3A3548"></span>
+</span>
+<span style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px; flex: 1">
+<span style="font-size: 12px; color: #A79FB8">{{p.where}}</span>
+<span style="font-size: 15px; font-weight: 500">{{p.choice}}</span>
+</span>
+</li>
+</sc-for>
+</ol>
+<a href="Review.dc.html" style="align-self: flex-start; display: flex; align-items: center; min-height: 32px; font-size: 14px">+ 4 more choices and 5 notes in the review</a>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="run-name" style="font-size: 13px; font-weight: 600">Name this path</label>
+<input id="run-name" type="text" defaultValue="Lantern Road — stealth run" style="box-sizing: border-box; width: 100%; height: 48px; padding: 0 12px; background: #1C1925; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; font-family: inherit; font-size: 15px">
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a href="Review.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; background: #E8B44C; color: #15131C; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 0 #8A6420; font-size: 16px; font-weight: 600">Save &amp; review story</a>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button style="display: flex; align-items: center; justify-content: center; gap: 6px; height: 48px; background: #201D29; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+Export path
+</button>
+<a href="Story.dc.html" style="display: flex; align-items: center; justify-content: center; height: 48px; background: #201D29; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; text-decoration: none; font-size: 14px; font-weight: 600">Play again</a>
+</div>
+<span style="font-size: 12px; color: #A79FB8; text-align: center">Exports your choices and notes as a text file (.md) or data (.json)</span>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stats: [
+        { value: '18', label: 'scenes' },
+        { value: '7', label: 'choices' },
+        { value: '5', label: 'notes' },
+        { value: '41m', label: 'played' }
+      ],
+      path: [
+        { where: 'Scene 3 · The toll gate', choice: 'Paid the toll in silver' },
+        { where: 'Scene 6 · Maddox’s hut', choice: 'Asked Maddox to come along' },
+        { where: 'Scene 9 · Ferry crossing', choice: 'Doused the lantern and drifted in silent' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

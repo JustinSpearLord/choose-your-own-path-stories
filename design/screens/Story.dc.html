@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story player</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Literata:opsz,wght@7..72,400;7..72,500&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E8B44C}a:hover{color:#F3CD7A}
+textarea::placeholder{color:#8C849C}
+</style>
+</helmet>
+<div style="width: 390px; height: 960px; box-sizing: border-box; background: #15131C; color: #EDE8F5; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 16px 20px 12px">
+<a href="Main.dc.html" aria-label="Back to library" style="width: 44px; height: 44px; flex: none; display: flex; align-items: center; justify-content: center; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px; color: #EDE8F5">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</a>
+<div style="flex: 1; display: flex; flex-direction: column; min-width: 0">
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 18px; font-weight: 500">The Lantern Road</span>
+<span style="font-size: 12px; color: #A79FB8">Scene 9 · Ferry crossing</span>
+</div>
+<span style="display: flex; align-items: center; gap: 4px; height: 32px; padding: 0 8px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px; font-size: 12px; color: #C9C2D8">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8B44C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+{{noteCount}} notes
+</span>
+</div>
+
+<div style="position: relative; border-top: 2px solid #2E2A3A; border-bottom: 2px solid #2E2A3A">
+<svg viewBox="0 0 64 36" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges" role="img" aria-label="Pixel art scene: a ferry crossing a foggy river at dusk, the far lantern dark" style="display: block; width: 100%; height: 190px">
+<rect x="0" y="0" width="64" height="36" fill="#2A2342"></rect>
+<rect x="0" y="10" width="64" height="6" fill="#3A2E55"></rect>
+<rect x="0" y="16" width="64" height="5" fill="#4D3A63"></rect>
+<rect x="9" y="3" width="1" height="1" fill="#EDE8F5"></rect>
+<rect x="22" y="6" width="1" height="1" fill="#EDE8F5"></rect>
+<rect x="44" y="2" width="1" height="1" fill="#EDE8F5"></rect>
+<rect x="58" y="5" width="1" height="1" fill="#EDE8F5"></rect>
+<rect x="0" y="18" width="14" height="3" fill="#1B1726"></rect>
+<rect x="46" y="15" width="18" height="2" fill="#1B1726"></rect>
+<rect x="40" y="17" width="24" height="4" fill="#1B1726"></rect>
+<rect x="54" y="10" width="1" height="7" fill="#0E0C14"></rect>
+<rect x="53" y="8" width="3" height="3" fill="#3A3346"></rect>
+<rect x="0" y="21" width="64" height="15" fill="#22304A"></rect>
+<rect x="0" y="19" width="64" height="3" fill="#EDE8F5" opacity="0.1"></rect>
+<rect x="4" y="24" width="6" height="1" fill="#3E5478"></rect>
+<rect x="44" y="27" width="8" height="1" fill="#3E5478"></rect>
+<rect x="8" y="31" width="10" height="1" fill="#3E5478"></rect>
+<rect x="50" y="33" width="6" height="1" fill="#3E5478"></rect>
+<rect x="19" y="21" width="6" height="6" fill="#E8B44C" opacity="0.2"></rect>
+<rect x="38" y="12" width="1" height="17" fill="#8A6E4E"></rect>
+<rect x="24" y="19" width="3" height="7" fill="#0E0C14"></rect>
+<rect x="33" y="18" width="3" height="8" fill="#0E0C14"></rect>
+<rect x="21" y="23" width="2" height="2" fill="#E8B44C"></rect>
+<rect x="18" y="26" width="24" height="3" fill="#6B5A45"></rect>
+<rect x="20" y="29" width="20" height="1" fill="#4A3D2F"></rect>
+</svg>
+</div>
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 16px 16px 12px">
+<p style="margin: 0 4px 2px; font-size: 12px; color: #A79FB8">Tap a passage to add a note</p>
+<sc-for list="{{paras}}" as="p" hint-placeholder-count="3">
+<button aria-pressed="{{p.pressed}}" onClick="{{p.pick}}" style="display: flex; gap: 10px; padding: 10px 10px 10px 8px; background: {{p.bg}}; border: 2px solid {{p.border}}; border-radius: 4px; color: #EDE8F5; text-align: left; font-family: 'Literata', Georgia, serif; font-size: 16px; line-height: 1.55; cursor: pointer">
+<span aria-hidden="true" style="width: 4px; flex: none; align-self: stretch; background: {{p.mark}}"></span>
+<span style="display: flex; flex-direction: column; gap: 4px; flex: 1">
+<sc-if value="{{p.speaker}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; gap: 6px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; color: {{p.speakerColor}}">
+<span aria-hidden="true" style="width: 14px; height: 14px; background: {{p.speakerSwatch}}; box-shadow: inset 0 -5px 0 rgba(0,0,0,0.3)"></span>
+{{p.speaker}}
+</span>
+</sc-if>
+<span>{{p.text}}</span>
+<sc-if value="{{p.hasNote}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; gap: 6px; margin-top: 2px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.4; color: #E8B44C">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+{{p.note}}
+</span>
+</sc-if>
+</span>
+</button>
+</sc-for>
+
+<sc-if value="{{editing}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #201D29; border: 2px solid #E8B44C; border-radius: 4px">
+<label for="passage-note" style="font-size: 13px; font-weight: 600">Note on this passage</label>
+<textarea id="passage-note" rows="2" placeholder="An idea, a line to keep, a question for your game…" style="box-sizing: border-box; width: 100%; resize: none; padding: 8px 10px; background: #15131C; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; font-family: inherit; font-size: 14px; line-height: 1.45"></textarea>
+<div style="display: flex; gap: 8px; justify-content: flex-end">
+<button onClick="{{close}}" style="height: 38px; padding: 0 12px; background: transparent; border: none; color: #C9C2D8; font-family: inherit; font-size: 14px; cursor: pointer">Cancel</button>
+<button onClick="{{close}}" style="height: 38px; padding: 0 14px; background: #E8B44C; border: none; border-radius: 2px; color: #15131C; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Save note</button>
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="padding: 0 20px 24px">
+<a href="Choice.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; background: #E8B44C; color: #15131C; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 4px; box-shadow: 0 4px 0 #8A6420">
+Continue
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sel: 1 };
+  }
+  renderVals() {
+    const data = [
+      { text: 'The ferry groans against its rope as Maddox poles you out into the fog. Halfway across, the lantern on the far bank gutters and goes dark.', note: 'Light as a resource? The dark bank could be a stealth level.' },
+      { speaker: 'WREN', speakerColor: '#8FD3A8', speakerSwatch: '#3F7D5C', text: '“That light’s burned for forty years. Someone put it out.”' },
+      { speaker: 'MADDOX', speakerColor: '#C9C2D8', speakerSwatch: '#8A8494', text: 'He doesn’t turn around. “Then someone’s waiting for us. Your call, ranger.”' }
+    ];
+    const sel = this.state.sel;
+    const paras = data.map((p, i) => {
+      const on = sel === i;
+      const hasNote = !!p.note;
+      return {
+        speaker: p.speaker || '',
+        speakerColor: p.speakerColor || '',
+        speakerSwatch: p.speakerSwatch || '',
+        text: p.text,
+        note: p.note || '',
+        hasNote,
+        pressed: String(on),
+        bg: on ? '#2A2417' : 'transparent',
+        border: on ? '#E8B44C' : 'transparent',
+        mark: hasNote ? '#E8B44C' : (on ? '#8A6420' : '#2E2A3A'),
+        pick: () => this.setState({ sel: on ? null : i })
+      };
+    });
+    return {
+      paras,
+      editing: sel !== null && sel !== undefined,
+      close: () => this.setState({ sel: null }),
+      noteCount: 3
+    };
+  }
+}
+</script>
+</body>
+</html>

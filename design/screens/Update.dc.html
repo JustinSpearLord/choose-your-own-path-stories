@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story update</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Literata:opsz,wght@7..72,400;7..72,500&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E8B44C}a:hover{color:#F3CD7A}
+</style>
+</helmet>
+<div style="width: 390px; height: 900px; box-sizing: border-box; padding: 20px 20px 28px; background: #15131C; color: #EDE8F5; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; gap: 18px; overflow: hidden">
+
+<div style="display: flex; align-items: center; gap: 12px">
+<a href="Import.dc.html" aria-label="Back" style="width: 44px; height: 44px; flex: none; display: flex; align-items: center; justify-content: center; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px; color: #EDE8F5">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</a>
+<h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 22px; font-weight: 500; letter-spacing: 1px">NEW VERSION</h1>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; background: #201D29; border: 2px solid #2E2A3A; border-radius: 6px">
+<span style="font-size: 14px; color: #C9C2D8">You already have this story.</span>
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 22px; font-weight: 500">Saltmarsh Wake</h2>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; align-items: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px; background: #1C1925; border-radius: 4px">
+<span style="font-size: 11px; color: #A79FB8">ON THIS PHONE</span>
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 20px">v1.0</span>
+<span style="font-size: 11px; color: #A79FB8">40 scenes</span>
+</div>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8B44C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px; background: #2A2417; border: 2px solid #8A6420; border-radius: 4px">
+<span style="font-size: 11px; color: #E8B44C">NEW FILE</span>
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 20px">v1.2</span>
+<span style="font-size: 11px; color: #A79FB8">44 scenes</span>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 15px; font-weight: 500; letter-spacing: 1px">WHAT HAPPENS TO YOUR PLAY</h3>
+<ul style="margin: 0; padding: 12px 14px; list-style: none; display: flex; flex-direction: column; gap: 10px; background: #1C1925; border: 2px solid #2E2A3A; border-radius: 4px">
+<sc-for list="{{effects}}" as="f" hint-placeholder-count="3">
+<li style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45">
+<span aria-hidden="true" style="width: 10px; height: 10px; margin-top: 4px; flex: none; background: {{f.color}}"></span>
+<span><strong style="font-weight: 600">{{f.title}}</strong> {{f.text}}</span>
+</li>
+</sc-for>
+</ul>
+</div>
+
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px">
+<a href="Main.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; background: #E8B44C; color: #15131C; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 0 #8A6420; font-size: 16px; font-weight: 600">Update and keep my progress</a>
+<a href="Main.dc.html" style="display: flex; align-items: center; justify-content: center; height: 48px; background: #201D29; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; text-decoration: none; font-size: 15px; font-weight: 600">Keep v1.0, don’t update</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      effects: [
+        { title: 'You continue at Scene 14.', text: 'It still exists in v1.2, so you pick up where you stopped.', color: '#5CC8B4' },
+        { title: 'Your 2 saved paths stay readable.', text: 'They keep the text you played, marked “v1.0” in Review.', color: '#5CC8B4' },
+        { title: '1 note may have moved.', text: 'Scene 6 was rewritten, so its note is kept on the scene instead of a passage.', color: '#E8B44C' },
+        { title: 'Your look stays Tide.', text: 'The author’s theme didn’t change.', color: '#5CC8B4' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

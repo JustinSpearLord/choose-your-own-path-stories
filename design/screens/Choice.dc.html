@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Decision point</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Literata:opsz,wght@7..72,400;7..72,500&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#E8B44C}a:hover{color:#F3CD7A}
+textarea::placeholder{color:#8C849C}
+</style>
+</helmet>
+<div style="width: 390px; height: 900px; box-sizing: border-box; background: #15131C; color: #EDE8F5; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 16px 20px 12px">
+<a href="Story.dc.html" aria-label="Back to scene" style="width: 44px; height: 44px; flex: none; display: flex; align-items: center; justify-content: center; background: #201D29; border: 2px solid #2E2A3A; border-radius: 4px; color: #EDE8F5">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</a>
+<div style="flex: 1; display: flex; flex-direction: column; min-width: 0">
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 18px; font-weight: 500">The Lantern Road</span>
+<span style="font-size: 12px; color: #A79FB8">Scene 9 · Decision 7</span>
+</div>
+</div>
+
+<svg viewBox="0 0 64 14" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges" aria-hidden="true" style="display: block; width: 100%; height: 80px; border-top: 2px solid #2E2A3A; border-bottom: 2px solid #2E2A3A">
+<rect x="0" y="0" width="64" height="14" fill="#3A2E55"></rect>
+<rect x="0" y="0" width="64" height="3" fill="#2A2342"></rect>
+<rect x="40" y="2" width="24" height="5" fill="#1B1726"></rect>
+<rect x="0" y="6" width="64" height="8" fill="#22304A"></rect>
+<rect x="0" y="5" width="64" height="2" fill="#EDE8F5" opacity="0.1"></rect>
+<rect x="6" y="9" width="6" height="1" fill="#3E5478"></rect>
+<rect x="46" y="11" width="8" height="1" fill="#3E5478"></rect>
+<rect x="24" y="3" width="3" height="6" fill="#0E0C14"></rect>
+<rect x="33" y="2" width="3" height="7" fill="#0E0C14"></rect>
+<rect x="21" y="6" width="2" height="2" fill="#E8B44C"></rect>
+<rect x="18" y="9" width="24" height="3" fill="#6B5A45"></rect>
+</svg>
+
+<div style="flex: 1; display: flex; flex-direction: column; gap: 16px; padding: 20px 20px 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 13px; letter-spacing: 2px; color: #E8B44C">DECISION</span>
+<h1 style="margin: 0; font-family: 'Literata', Georgia, serif; font-size: 22px; font-weight: 500; line-height: 1.35">The far bank is dark. What do you do?</h1>
+</div>
+
+<div role="radiogroup" aria-label="Choices" style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{choices}}" as="c" hint-placeholder-count="3">
+<button role="radio" aria-checked="{{c.checked}}" onClick="{{c.pick}}" style="display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 12px; background: {{c.bg}}; border: 2px solid {{c.border}}; border-radius: 4px; box-shadow: 0 3px 0 {{c.shadow}}; color: #EDE8F5; text-align: left; font-family: inherit; cursor: pointer">
+<span aria-hidden="true" style="width: 30px; height: 30px; flex: none; display: flex; align-items: center; justify-content: center; font-family: 'Pixelify Sans', monospace; font-size: 16px; background: {{c.keyBg}}; color: {{c.keyFg}}">{{c.key}}</span>
+<span style="flex: 1; font-size: 16px; font-weight: 500; line-height: 1.35">{{c.text}}</span>
+</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="choice-note" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; font-weight: 600">
+Note on this decision
+<span style="font-weight: 400; font-size: 12px; color: #A79FB8">optional</span>
+</label>
+<textarea id="choice-note" rows="3" placeholder="Why this choice? What would the other one have changed?" style="box-sizing: border-box; width: 100%; resize: none; padding: 10px 12px; background: #1C1925; border: 2px solid #3A3548; border-radius: 4px; color: #EDE8F5; font-family: inherit; font-size: 14px; line-height: 1.45"></textarea>
+</div>
+
+<a href="Ending.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 52px; background: #E8B44C; color: #15131C; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 4px; box-shadow: 0 4px 0 #8A6420">Confirm choice {{pickedKey}}</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"choiceCount":{"editor":"range","default":3,"min":2,"max":3,"step":1},"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: 'B' };
+  }
+  renderVals() {
+    const count = Math.min(3, Math.max(2, this.props.choiceCount ?? 3));
+    const all = [
+      { key: 'A', text: 'Press on and land the ferry' },
+      { key: 'B', text: 'Douse your lantern and drift in silent' },
+      { key: 'C', text: 'Ask Maddox what he isn’t telling you' }
+    ].slice(0, count);
+    const picked = all.some((c) => c.key === this.state.picked) ? this.state.picked : null;
+    const choices = all.map((c) => {
+      const sel = c.key === picked;
+      return {
+        ...c,
+        checked: String(sel),
+        bg: sel ? '#2A2417' : '#1C1925',
+        border: sel ? '#E8B44C' : '#2E2A3A',
+        shadow: sel ? '#8A6420' : '#0E0C14',
+        keyBg: sel ? '#E8B44C' : '#2E2A3A',
+        keyFg: sel ? '#15131C' : '#EDE8F5',
+        pick: () => this.setState({ picked: c.key })
+      };
+    });
+    return { choices, pickedKey: picked || '' };
+  }
+}
+</script>
+</body>
+</html>
