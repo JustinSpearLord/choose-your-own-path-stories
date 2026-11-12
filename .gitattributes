@@ -1,0 +1,2 @@
+# Keep files byte-for-byte: fixtures and samples are compared against the reference validator.
+* -text

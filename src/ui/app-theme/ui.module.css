@@ -442,3 +442,18 @@ textarea.field {
   font-size: 14px;
   line-height: 1.5;
 }
+
+/* Inside panels, meta text and accent-colored text use the panel-safe variants. */
+.card,
+.row,
+.stat,
+.sheet,
+.checkList,
+.notice,
+.segmented,
+.empty,
+.onPanel {
+  --muted: var(--panel-muted);
+  --accent-text: var(--accent-on-panel);
+  --text-2: var(--panel-text-2);
+}
