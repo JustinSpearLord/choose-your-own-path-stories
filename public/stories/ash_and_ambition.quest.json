@@ -1,0 +1,173 @@
+{
+  "format": "quest/1",
+  "id": "ash-and-ambition",
+  "title": "Ash and Ambition",
+  "author": "Claude, for Justin (Star Wars fan story)",
+  "version": "1.0",
+  "summary": "You are a low-ranked student at the Sith academy on Korriban, in the last years of the Brotherhood of Darkness. A quiet miner called Bane has just arrived, and he is asking questions nobody else dares to.",
+  "cover": "ruins",
+  "theme": { "preset": "ember", "font": "serif" },
+  "start": "yard",
+  "characters": [
+    { "id": "tesh", "name": "Tesh", "color": "#C9503C", "about": "Top-ranked student. Cruel because it has always worked." },
+    { "id": "maleth", "name": "Overseer Maleth", "color": "#8A7FA8", "about": "Instructor. Rewards results, forgives nothing." },
+    { "id": "bane", "name": "Bane", "color": "#B08A4C", "about": "A former miner, new to the academy. Huge, patient, watching everything." }
+  ],
+  "scenes": {
+    "yard": {
+      "title": "The training yard",
+      "art": "ruins",
+      "text": [
+        "Dawn on Korriban is the color of old blood. Forty students drill between the broken statues of the academy yard, and you are ranked thirty-first.",
+        "Tesh, ranked first, knocks the training saber from your hand without looking at you, then steps on it.",
+        { "speaker": "tesh", "line": "Pick it up. On your knees. That is where the Force put you." },
+        "At the edge of the yard the new student, the big miner they call Bane, has stopped his own drill to watch. Not Tesh. You."
+      ],
+      "prompt": "Everyone is waiting to see what you do.",
+      "choices": [
+        { "text": "Challenge Tesh to the dueling ring", "to": "ring" },
+        { "text": "Pick it up, say nothing, go to the archives", "to": "archives" },
+        { "text": "Walk away and see where the miner goes", "to": "follow" }
+      ]
+    },
+    "ring": {
+      "title": "The dueling ring",
+      "art": "castle_hall",
+      "text": [
+        "The ring is a circle of black stone on the academy roof. Overseer Maleth takes her seat. Challenges are always permitted here. So are funerals.",
+        { "speaker": "maleth", "line": "Thirty-first against first. Brief, I expect. Begin." },
+        "Tesh comes in fast and high, the way he always does. You have watched him do it to others for two years."
+      ],
+      "prompt": "How do you fight him?",
+      "choices": [
+        { "text": "Let the hatred take you and hit him with everything", "to": "ring-rage" },
+        { "text": "Give ground, stay cold, wait for his mistake", "to": "ring-patience" }
+      ]
+    },
+    "ring-rage": {
+      "title": "First blood",
+      "art": "castle_hall",
+      "text": [
+        "Two years of swallowed insults come up all at once. The dark side answers like a flood through a broken dam, and Tesh's guard simply stops mattering.",
+        "He is on the stone with your blade at his throat before the Overseer has finished leaning forward. The roof is silent.",
+        { "speaker": "maleth", "line": "Well. Thirty-first no longer. The ring does not require mercy, student. It does not forbid it either." }
+      ],
+      "prompt": "Tesh is beaten. What now?",
+      "choices": [
+        { "text": "Finish him. Let the academy learn your name", "to": "end-feared" },
+        { "text": "Let him live, and let him remember who allowed it", "to": "night" }
+      ]
+    },
+    "ring-patience": {
+      "title": "A narrow loss",
+      "art": "castle_hall",
+      "text": [
+        "You give ground and wait. His mistake comes, a half-step too wide, and you see it clearly. You are simply not fast enough to use it.",
+        "The blow that ends the duel cracks two ribs. Tesh bows to the Overseer and does not look at you again.",
+        "As they carry the sabers away, a deep voice says quietly behind you: \"You saw the opening. Most of them never do.\" When you turn, the miner is already leaving."
+      ],
+      "prompt": "You lost. You also learned something.",
+      "choices": [
+        { "text": "Go to the archives and find out how the old Sith fought", "to": "archives" },
+        { "text": "Follow the miner", "to": "follow" }
+      ]
+    },
+    "archives": {
+      "title": "The archives",
+      "art": "library",
+      "text": [
+        "Nobody uses the archives. The instructors say the old scrolls are history, and history is for the Jedi.",
+        "Deep in the stacks you find a shelf where the dust has been disturbed, and one manuscript left open. It describes the ancient Sith: not a brotherhood of equals, but a single Dark Lord, with all the power of the order gathered in one pair of hands.",
+        "A line has been marked with a thumbnail: when many share the dark side, each holds only a scrap of it."
+      ],
+      "prompt": "This is heresy against the Brotherhood. What do you do with it?",
+      "choices": [
+        { "text": "Take it to Overseer Maleth and name whoever was reading it", "to": "end-leash" },
+        { "text": "Hide it under your robe and read it tonight", "to": "night" },
+        { "text": "Wait in the stacks to see who comes back for it", "to": "follow" }
+      ]
+    },
+    "follow": {
+      "title": "The Valley of the Dark Lords",
+      "art": "cave",
+      "text": [
+        "You find him where no student is meant to go: the tombs in the valley below the academy, stripped bare by a thousand years of grave robbers.",
+        "Bane is sitting on a fallen pillar in the dark, a stolen manuscript on his knee. He does not seem surprised to see you.",
+        { "speaker": "bane", "line": "They told us the tombs are empty. They're right. The power that was here is gone, shared out, like rations in a mine. Every Sith a lord, and every lord weak." },
+        { "speaker": "bane", "line": "You came all this way. Ask your question, or draw your blade." }
+      ],
+      "prompt": "The miner waits.",
+      "choices": [
+        { "text": "\"Teach me what you've found.\"", "to": "end-shadow" },
+        { "text": "Draw your blade. One heretic is worth a promotion", "to": "end-dust" },
+        { "text": "Say nothing, back away, return to the dormitory", "to": "night" }
+      ]
+    },
+    "night": {
+      "title": "The dormitory",
+      "art": "crypt",
+      "text": [
+        "The dormitory is a converted crypt, forty stone shelves in the dark. You lie awake thinking about scraps of power, and who is holding yours.",
+        "A little before the second moon sets, bare feet cross the floor toward your shelf. A hooded student, a training blade with the safety filed off, held low.",
+        "At the academy this is not a crime. It is how the rankings change."
+      ],
+      "prompt": "You have a heartbeat to decide.",
+      "choices": [
+        { "text": "Strike first, and make sure they never get up", "to": "end-feared" },
+        { "text": "Throw the blanket, run, and keep running into the desert", "to": "end-exile" },
+        { "text": "Catch the wrist and whisper: \"Who sent you? I'll pay double.\"", "to": "end-leash" }
+      ]
+    },
+    "end-feared": {
+      "title": "A name they whisper",
+      "art": "castle_hall",
+      "text": [
+        "It is over quickly. By morning the whole academy knows, and nobody steps on your saber again.",
+        "Overseer Maleth moves you up the rankings without comment. The others give you a wide path in the corridors, and you tell yourself that fear and respect are the same thing.",
+        "Across the yard the miner watches you with something like disappointment. He has seen strong, angry people before. They were all digging in the same mine he was."
+      ],
+      "ending": { "title": "Feared, Ranked Fourth", "tone": "neutral" }
+    },
+    "end-leash": {
+      "title": "The Overseer's favorite",
+      "art": "throne_room",
+      "text": [
+        "It reaches Overseer Maleth, as everything does. She hears you out with her fingers steepled.",
+        { "speaker": "maleth", "line": "Loyal. Useful. I can work with useful. You will bring me every whisper in that dormitory, and in return nobody will come for you in the night." },
+        "You rise through the rankings on her word alone. You are safe, and well fed, and you have never been less free. The dark side was supposed to break chains."
+      ],
+      "ending": { "title": "A Comfortable Leash", "tone": "bad" }
+    },
+    "end-shadow": {
+      "title": "The student's student",
+      "art": "cave",
+      "text": [
+        "He studies you for a long moment, then moves over on the pillar and turns the manuscript so you can both read it.",
+        { "speaker": "bane", "line": "Then learn this first. There should be only two. One to hold the power, and one to want it. I don't know yet which of those you are." },
+        "You read until the lamp gutters. When you climb back to the academy at dawn, the forty students drilling in the yard look, for the first time, like a great many people sharing very little."
+      ],
+      "ending": { "title": "The Rule Not Yet Written", "tone": "good" }
+    },
+    "end-dust": {
+      "title": "One more grave",
+      "art": "crypt",
+      "text": [
+        "You are fast. He does not even stand up.",
+        "The Force closes around you like a cave-in, a pressure he learned somewhere far deeper and darker than any classroom, and your blade goes skittering away across the tomb floor.",
+        { "speaker": "bane", "line": "You fought for a ranking. That is all they ever taught you to want." },
+        "The valley has room for one more grave. The academy lists you as a deserter and does not look very hard."
+      ],
+      "ending": { "title": "Dust in the Valley", "tone": "bad" }
+    },
+    "end-exile": {
+      "title": "The open desert",
+      "art": "mountain_pass",
+      "text": [
+        "You run until the academy is a black tooth on the horizon, and then you keep walking.",
+        "No ranking, no master, no brotherhood. Only the red desert, the tombs, and a quiet in your head you have not heard since you were a child.",
+        "Years from now, when word comes that the Brotherhood of Darkness is gone, every lord of it dead in a single night, you will be one of very few people alive who are not surprised."
+      ],
+      "ending": { "title": "Unranked and Alive", "tone": "neutral" }
+    }
+  }
+}

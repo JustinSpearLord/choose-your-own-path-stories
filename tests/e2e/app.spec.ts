@@ -460,3 +460,18 @@ test('a package built by hand imports and plays offline', async ({ page, context
   }
   await context.setOffline(false);
 });
+
+test('the bundled test stories import from a same-site link and pass the file check', async ({ page }) => {
+  for (const [file, title] of [
+    ['stories/korriban_academy.quest.json', 'The Miner of Korriban'],
+    ['stories/ash_and_ambition.quest.json', 'Ash and Ambition'],
+  ]) {
+    const url = new URL(file, page.url().split('#')[0]).toString();
+    await page.goto('./#/import?url=' + encodeURIComponent(url));
+    const preview = page.getByRole('region', { name: 'Story preview' });
+    await expect(preview.getByRole('heading', { name: title })).toBeVisible();
+    await expect(page.locator('li[data-kind="fix"]')).toHaveCount(0);
+    await expect(page.locator('li[data-kind="note"]')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Next: choose a look' })).toBeEnabled();
+  }
+});
