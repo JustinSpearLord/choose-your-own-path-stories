@@ -1,0 +1,619 @@
+{
+  "format": "quest/1",
+  "id": "korriban-academy",
+  "title": "The Miner of Korriban",
+  "author": "Claude, for Justin (Star Wars fan story)",
+  "version": "1.0",
+  "summary": "A thousand years before the Empire, you are an apprentice at the Sith Academy on Korriban while the Brotherhood of Darkness bleeds on Ruusan. Then Lord Kopecz brings in a cortosis miner called Bane. Train under Kas'im and Qordis, survive Sirak and Githany, and decide what the big quiet man from Apatros is to you.",
+  "cover": "ruins",
+  "theme": { "preset": "ember", "font": "serif" },
+  "start": "arrival",
+  "characters": [
+    { "id": "bane", "name": "Bane", "color": "#B08A4C", "about": "Dessel of Apatros. Huge, shaven-headed former cortosis miner and Gloom Walker trooper. Quiet, patient, reads people like a sabacc table, hungry for knowledge the Masters dismiss. Not yet a Dark Lord." },
+    { "id": "kasim", "name": "Blademaster Kas'im", "color": "#4FA3A0", "about": "Twi'lek swordmaster of the Academy, master of all seven forms. Dry, fair, proud of talent wherever he finds it. Respects the blade more than politics." },
+    { "id": "qordis", "name": "Lord Qordis", "color": "#8A7FA8", "about": "Head of the Academy. Tall, gaunt, vain, heavy rings on long fingers. Rigid servant of Kaan's Brotherhood who holds that the old Sith failed and their teachings are dust." },
+    { "id": "sirak", "name": "Sirak", "color": "#C9B24A", "about": "Iridonian Zabrak, top apprentice, unbeaten with the double-bladed training saber. Cold, arrogant, wastes few words. Some whisper he is the Sith'ari." },
+    { "id": "githany", "name": "Githany", "color": "#3F9A5C", "about": "Former Jedi Padawan who defected to Lord Kaan. Black hair, green eyes, beautiful and knows it. Calculating, flirtatious, contemptuous of weakness, never without a second plan." },
+    { "id": "kopecz", "name": "Lord Kopecz", "color": "#5A7FB0", "about": "Heavyset Twi'lek Sith Lord and battlefield commander. Blunt, cynical about Kaan's talk of equality, values strength. He found Bane and brought him to Korriban." },
+    { "id": "fohargh", "name": "Fohargh", "color": "#6E8A4C", "about": "Makurth apprentice: horned, scaled, vicious in the ring. Speaks only his own growling tongue and enjoys other people's pain." },
+    { "id": "llokay", "name": "Llokay", "color": "#B0503C", "about": "Red-skinned Zabrak, Sirak's follower along with his sister Yevra. Loud where Sirak is silent." },
+    { "id": "orilltha", "name": "Lord Orilltha", "color": "#A85C8E", "about": "One of the Academy's Sith Masters. Teaches the channelling of pain and anger into the Force." }
+  ],
+  "scenes": {
+    "arrival": {
+      "title": "The landing field",
+      "art": "castle_gate",
+      "text": [
+        "Korriban. A dead red world of tombs, and above the Valley of the Dark Lords the black temple the Brotherhood of Darkness has made its Academy. You have been an apprentice here for most of a year, ranked somewhere in the unremarkable middle.",
+        "This morning a shuttle from the Ruusan front settles on the landing field. Down the ramp comes Lord Kopecz, heavyset, lekku scarred, a soldier among sorcerers. Behind him walks a human in the grey of a Sith trooper: enormous, shaven-headed, with the shoulders of a man who has swung a hydraulic jack since boyhood.",
+        "The other apprentices glance and look away. One more recruit. But the big man is not staring at the temple the way newcomers do. He is studying it, the way a player studies the table before he sits down."
+      ],
+      "prompt": "Drills begin on the roof within the hour. Until then your time is your own.",
+      "choices": [
+        { "text": "Introduce yourself to the newcomer", "to": "meet-bane" },
+        { "text": "Approach Lord Kopecz and ask who he has brought", "to": "kopecz-word" },
+        { "text": "Ignore them both and go up to the roof early", "to": "drill" }
+      ]
+    },
+    "meet-bane": {
+      "title": "The man from Apatros",
+      "art": "castle_gate",
+      "text": [
+        "Up close he is bigger still. He lets you speak first and takes a moment before answering, as if weighing what the answer might cost him.",
+        { "speaker": "bane", "line": "Bane. That's the name I'll use here. I dug cortosis on Apatros until I killed a Republic ensign over a sabacc game. After that the Gloom Walkers. After that, apparently, this." },
+        "He says it flatly, no boast and no apology. His eyes move over the apprentices crossing the field: who walks alone, who walks in packs, who steps aside for whom.",
+        { "speaker": "bane", "line": "You've been here a while. What does a man need to know that the Masters won't tell him?" }
+      ],
+      "prompt": "What do you tell him?",
+      "choices": [
+        { "text": "\"Stay out of the dueling ring until Kas'im says you're ready.\"", "to": "drill" },
+        { "text": "\"The archives. Nobody goes there. That's why you should.\"", "to": "drill" }
+      ]
+    },
+    "kopecz-word": {
+      "title": "A soldier's opinion",
+      "art": "castle_gate",
+      "text": [
+        "Lord Kopecz is watching the shuttle refuel with the impatience of a man who would rather be back at the war. He looks you over once and decides you are worth a sentence or two.",
+        { "speaker": "kopecz", "line": "His unit was ordered into a suicide charge. He broke his lieutenant's jaw, led them round the flank instead, and took the guns by feeling where the gunners were in the dark. He didn't know what he was doing. That's what interests me." },
+        { "speaker": "kopecz", "line": "Kaan tells us every Sith is equal now. Lovely speech. On Ruusan I've yet to see the Jedi agree. Strength is still strength, apprentice. Watch that one. Then decide whose side of the ring you want to be standing on." }
+      ],
+      "prompt": "Kopecz turns back to his ship.",
+      "choices": [
+        { "text": "Go and meet this miner before the others do", "to": "meet-bane" },
+        { "text": "File it away and go up to the roof for drills", "to": "drill" }
+      ]
+    },
+    "drill": {
+      "title": "Kas'im's class",
+      "art": "ruins",
+      "text": [
+        "The temple roof at dawn: wind, red dust, and forty apprentices in ranks. Blademaster Kas'im walks the lines with his hands behind his back, lekku swaying, missing nothing.",
+        "You train with durasteel blades edged in the barbed spines of the pelko bug. They do not cut. Each touch pumps venom into the muscle, and the limb goes numb and useless. A duel here ends when someone can no longer stand.",
+        { "speaker": "kasim", "line": "Seven forms. Most of you will spend your lives learning one of them badly. Shii-Cho for the basics, Makashi for the duelist, Soresu for the patient, Ataru for the reckless, Djem So for the strong. Pair off. Show me which mistake you are." },
+        "The newcomer has been handed a training blade. Fohargh the Makurth, horned and green-scaled, is already grinning at him. And at the far end, alone, Sirak is running sequences with his double-bladed saber as if the rest of you were weather."
+      ],
+      "prompt": "Who do you spend the morning on?",
+      "choices": [
+        { "text": "Pair with the miner before Fohargh claims him", "to": "spar-bane" },
+        { "text": "Take Fohargh yourself. You need the practice", "to": "spar-fohargh" },
+        { "text": "Drill alone near Sirak and study how he moves", "to": "watch-sirak" }
+      ]
+    },
+    "spar-bane": {
+      "title": "Djem So",
+      "art": "ruins",
+      "text": [
+        "He holds the blade like a tool, not a weapon. His footwork is a brawler's. For three exchanges you make him look foolish.",
+        "On the fourth he stops trying to copy the forms and simply hits you, a two-handed overhead blow that drives your guard down to your shoulder. He has noticed that you parry well and retreat badly, and he has built his whole attack out of that one fact.",
+        { "speaker": "kasim", "line": "Form Five, without knowing its name. Power, and the sense to aim it. Raw as ore. You, miner: you will see me every morning. You, apprentice: he found your flaw in four passes. I have been telling you about it for a year." }
+      ],
+      "prompt": "Bane lowers his blade and waits to see how you take it.",
+      "choices": [
+        { "text": "Laugh, and show him the footwork drill that would have saved you", "to": "lecture" },
+        { "text": "Go again, harder. You won't lose twice to a first-day recruit", "to": "lecture" }
+      ]
+    },
+    "spar-fohargh": {
+      "title": "The Makurth",
+      "art": "ruins",
+      "text": [
+        "Fohargh fights the way he does everything: to hurt. He speaks no Basic, only the snarling Makurth tongue, and he keeps up a low stream of it while his blade hunts your wrists.",
+        "A barb rakes your forearm. The pelko venom burns, then your sword hand simply stops belonging to you. Fohargh could end it there. Instead he touches your knee, your other arm, your thigh, one at a time, enjoying each.",
+        "From the next square the miner has stopped his own drill to watch. He is not watching you fall. He is watching Fohargh's face while he does it, and the Makurth notices, and bares his teeth at him."
+      ],
+      "prompt": "You will be able to feel your hand again in an hour.",
+      "choices": [
+        { "text": "Limp to Qordis's lecture and nurse the grudge", "to": "lecture" },
+        { "text": "Sit against the parapet and watch Sirak finish his forms", "to": "watch-sirak" }
+      ]
+    },
+    "watch-sirak": {
+      "title": "The Zabrak",
+      "art": "ruins",
+      "text": [
+        "Sirak of Iridonia: yellow skin, a crown of small horns, eyes like a predator's. The double-bladed saber is the hardest weapon to master and he spins it like a thought. He has never lost in the ring. He has never looked as if he might.",
+        "Two red-skinned Zabrak hover near him always: Llokay and his sister Yevra. They do the talking Sirak does not bother with.",
+        { "speaker": "llokay", "line": "Looking for lessons? They say the Sith'ari will come, the perfect being who leads us all. Some of us think he's standing right there. Remember you watched him train, when you're old." },
+        "Sirak does not turn his head. Kas'im, passing, murmurs for your ears alone that the double blade hides a weakness in its flourish: every spin is a moment the wielder is committed. He does not say whether anyone here is good enough to use that."
+      ],
+      "prompt": "The bell sounds for Lord Qordis's lecture.",
+      "choices": [
+        { "text": "Go down to the lecture hall with the others", "to": "lecture" },
+        { "text": "Skip it. See if the archives hold anything on the Sith'ari", "to": "archives-first" }
+      ]
+    },
+    "lecture": {
+      "title": "Lord Qordis",
+      "art": "throne_room",
+      "text": [
+        "The lecture hall was a throne room once. Lord Qordis uses the dais. He is tall and gaunt, with long-nailed fingers so heavy with rings that they click when he gestures, and he gestures often.",
+        { "speaker": "qordis", "line": "Peace is a lie. You know the words. Passion is the fuel, and the dark side is the fire. For three thousand years the Sith tore at each other, Master against apprentice, and the Jedi laughed. Lord Kaan ended that. In the Brotherhood of Darkness all who earn the name are Dark Lords, and equal." },
+        { "speaker": "qordis", "line": "Other academies turn out warriors and assassins. This one makes Sith Lords. You are the best the Brotherhood has. Act like it." },
+        "At the back the new recruit sits very still, taking in every word. You have the odd sense he is also taking in what is not being said."
+      ],
+      "prompt": "Qordis pauses for questions he does not expect.",
+      "choices": [
+        { "text": "Ask why no Sith carries the title 'Darth' any longer", "to": "ask-darth" },
+        { "text": "Keep silent and go on to Lord Orilltha's class", "to": "force-class" }
+      ]
+    },
+    "ask-darth": {
+      "title": "A dead title",
+      "art": "throne_room",
+      "text": [
+        "The rings stop clicking. Forty heads turn toward you, and then, carefully, away.",
+        { "speaker": "qordis", "line": "Darth. A title for one who would set himself above his brothers. It made targets of those who claimed it and rivals of everyone else. The Brotherhood has no use for it. The ancients are dust, apprentice, and so is everything they believed. That is why their scrolls rot unread downstairs, and why you will spend your hours on the training roof and not among them." },
+        "He holds your eye a moment longer than is comfortable. As the hall empties, a deep voice beside you says quietly: \"He answered a different question from the one you asked.\" The miner moves on before you can reply."
+      ],
+      "prompt": "You have just been told where not to go.",
+      "choices": [
+        { "text": "Go straight to the archives", "to": "archives-first" },
+        { "text": "Don't push your luck. Go to Lord Orilltha's class", "to": "force-class" }
+      ]
+    },
+    "force-class": {
+      "title": "The lesson of pain",
+      "art": "dungeon",
+      "text": [
+        "Lord Orilltha teaches in the cellars, where it is cold. Today each apprentice kneels with a hand over a brazier. The exercise is simple: do not take the hand away. Take the pain, feed it to your anger, and use what comes back to lift the iron weight on the floor in front of you.",
+        { "speaker": "orilltha", "line": "The Jedi run from what they feel. You will run toward it. Pain is a door. Hatred is the hand that opens it. Who hurt you first? Start there." },
+        "Around the room weights tremble and rise. Sirak's hangs steady at eye level; he looks bored. Githany's place is empty, for she has not yet come to Korriban. And the miner, on his first day, shuts his eyes, thinks of someone, and his weight slams into the ceiling hard enough to crack the stone.",
+        "Lord Orilltha says nothing for a long moment. Then she writes something down."
+      ],
+      "prompt": "Your own weight wobbles a hand's breadth off the floor. Your palm is blistering.",
+      "choices": [
+        { "text": "Afterward, look for the miner. You want to know who he thought of", "to": "archives-first" },
+        { "text": "Stay late and practice until the weight obeys you", "to": "challenge" }
+      ]
+    },
+    "archives-first": {
+      "title": "The archives",
+      "art": "library",
+      "text": [
+        "The archives lie under the temple: scrolls, datacards, flimsiplast gone brown. The dust on the floor shows one set of footprints besides your own, and they are large.",
+        "Bane has a lamp and a stack of manuscripts older than the Republic's calendar. He reads slowly, lips moving sometimes, a man who learned letters late and values them more for it.",
+        { "speaker": "bane", "line": "The Masters say there's nothing here. But the ones who wrote these ruled the galaxy. Revan. Naga Sadow. Exar Kun. Kaan has an army of Dark Lords and can't take one planet." },
+        { "speaker": "bane", "line": "My father named me Bane. He meant it as a curse. I thought of him today in the cellar and the iron jumped. I'd like to understand why, and Qordis only tells me to hate harder." }
+      ],
+      "prompt": "He nudges a second stool out from the table with his boot. It might be an invitation.",
+      "choices": [
+        { "text": "Sit down and read with him", "to": "challenge" },
+        { "text": "Leave him to it. Being seen down here has a price", "to": "challenge" }
+      ]
+    },
+    "challenge": {
+      "title": "The challenge",
+      "art": "ruins",
+      "text": [
+        "Months pass. The miner climbs the rankings with a speed that makes people nervous. He trains at dawn with Kas'im, reads at night, and speaks little. Then one morning on the roof Fohargh steps into the dueling ring and points his blade at him.",
+        "Any apprentice may challenge any other. The Masters watch. Rank is taken, never given.",
+        { "speaker": "fohargh", "line": "(in the Makurth tongue, slowly, so that the insult needs no translation) Miner. Slave. Come and be broken." },
+        "Bane walks into the ring. The apprentices form their circle. Sirak and his two shadows take the far side. Kas'im folds his arms."
+      ],
+      "prompt": "Where do you stand?",
+      "choices": [
+        { "text": "At the front, on Bane's side of the ring", "to": "after-bane" },
+        { "text": "Near Sirak, to hear what the best of you makes of it", "to": "after-sirak" },
+        { "text": "Beside Kas'im, to see the fight through a master's eyes", "to": "after-kasim" }
+      ]
+    },
+    "after-bane": {
+      "title": "What he did to Fohargh",
+      "art": "ruins",
+      "text": [
+        "Fohargh is the better swordsman and knows it. He numbs Bane's left arm, then a leg, and stands over him growling in his own language, drawing it out the way he did with you.",
+        "You are close enough to see Bane's face change. Not fear. Something old coming up from a long way down. He does not lift his blade. He lifts his hand, and the air in the ring goes tight as a mine before a cave-in.",
+        "The Makurth rises off the stone, clawing at his own throat. There is a sound like a wet branch breaking. Then Fohargh is simply a body, and the roof is utterly silent.",
+        "Bane looks at his hand as if it belongs to someone else. Hours later you find him alone in the dormitory, still looking at it.",
+        { "speaker": "bane", "line": "I didn't choose it. I thought of my father, the night he died in his bunk, and I knew. I did that too. I was a boy and I wished him dead and the Force heard me. What kind of power kills what you only hate?" }
+      ],
+      "prompt": "He is not asking the Masters. He is asking you.",
+      "choices": [
+        { "text": "\"The kind the Sith are supposed to have. Don't flinch from it.\"", "to": "sirak-duel" },
+        { "text": "\"The kind you learn to aim. Until then, keep out of the ring.\"", "to": "sirak-duel" }
+      ]
+    },
+    "after-sirak": {
+      "title": "Sirak's verdict",
+      "art": "ruins",
+      "text": [
+        "From here you see it across the ring: Fohargh toying with the bigger man, then Bane's hand coming up, the Makurth lifted and crushed by nothing at all. Apprentices are not supposed to be able to do that.",
+        "Llokay swears under his breath. Yevra's hand goes to her blade. Sirak alone has not moved, but for the first time since you have known him he is looking directly at another student.",
+        { "speaker": "sirak", "line": "He did not mean to. He was frightened afterward, did you see? Power he cannot command. I will let him sit with what he has done. Then I will take him apart where everyone can watch, and they will remember which of us is the Sith'ari." },
+        "It is the longest speech you have ever heard him make."
+      ],
+      "prompt": "Sirak's pale eyes pass over you: a piece on the board, briefly considered.",
+      "choices": [
+        { "text": "Find Bane and warn him what is coming", "to": "after-bane" },
+        { "text": "Say nothing. This is between the two of them", "to": "sirak-duel" }
+      ]
+    },
+    "after-kasim": {
+      "title": "The Blademaster's view",
+      "art": "ruins",
+      "text": [
+        "Beside Kas'im you see the duel as he does: Fohargh's superior bladework, Bane's sound instincts and unfinished defense. Then the hand, the lift, the snap, and a dead Makurth on the roof.",
+        "The Twi'lek's lekku twitch once. It is the only sign he gives.",
+        { "speaker": "kasim", "line": "I teach the lightsaber. That was not the lightsaber. Qordis will call it a triumph for the Academy, and tonight he will lie awake wondering what Kopecz has dropped in his lap." },
+        { "speaker": "kasim", "line": "The boy is the strongest I have seen. He is also afraid of himself now, and a man who doubts cannot reach the dark side at all. If Sirak has any sense he will challenge him soon. Sirak has a great deal of sense." }
+      ],
+      "prompt": "Kas'im walks into the ring to see the body removed.",
+      "choices": [
+        { "text": "Wait and see whether the Blademaster is right", "to": "sirak-duel" },
+        { "text": "Go to Bane now, while he is still alone with it", "to": "after-bane" }
+      ]
+    },
+    "sirak-duel": {
+      "title": "Sirak and the miner",
+      "art": "ruins",
+      "text": [
+        "In the end it is Bane who makes the challenge, too soon and for the wrong reasons: to prove to himself that Fohargh was no accident.",
+        "It is not a duel. It is a lesson. The double blade is everywhere at once, and whatever Bane reached for when Fohargh died does not come. He is fighting with muscle alone against the best apprentice on Korriban.",
+        "Sirak numbs him limb by limb and then keeps going, boot and blade, long after the ring's purpose is served. Bones break. No Master calls a halt. When it is finished, Sirak steps over him without a glance and the circle parts to let him through.",
+        "They carry Bane down to the bacta tanks. Lord Qordis is heard to remark that the Academy does not spend its instructors on failures."
+      ],
+      "prompt": "By evening the miner's name is something people say with a smirk.",
+      "choices": [
+        { "text": "Go down to the medical ward", "to": "medbay" },
+        { "text": "Keep your distance, like everyone else", "to": "outcast" }
+      ]
+    },
+    "medbay": {
+      "title": "The bacta tank",
+      "art": "house_interior",
+      "text": [
+        "He floats for days. When they lift him out he sits on the edge of the cot, vast and grey-faced, and does not seem surprised that you are the only visitor.",
+        { "speaker": "bane", "line": "It's gone. In the ring I reached for it and there was nothing. Like a seam that's been worked out. I keep seeing my father. I keep thinking, if the dark side is this, then I've been a murderer since I was a child, and I'm not sure I want it back." },
+        "He says it without self-pity, a man reading out the cards he has been dealt. Outside, two apprentices pass the door laughing, and one of them does a fair impression of a large man falling down."
+      ],
+      "prompt": "What do you say to him?",
+      "choices": [
+        { "text": "\"Then find out what it really is. You're the only one here who reads.\"", "to": "outcast" },
+        { "text": "\"I don't know. But I'll keep a place for you at the table.\"", "to": "outcast" }
+      ]
+    },
+    "outcast": {
+      "title": "The outcast",
+      "art": "castle_hall",
+      "text": [
+        "Bane returns to an Academy that has decided he does not exist. No Master corrects his forms. Apprentices leave the bench when he sits. He takes it as he took the mines: head down, enduring, counting.",
+        "Three things happen in the same tenday. A new student arrives from Ruusan, a woman, and every head in the refectory turns. Kas'im begins leaving the roof door unbarred before dawn. And Lord Kopecz's shuttle is sighted on approach, which means news from the war.",
+        "You cannot be in three places."
+      ],
+      "prompt": "Where do you put yourself?",
+      "choices": [
+        { "text": "Find out who the new arrival is", "to": "githany" },
+        { "text": "Go up to the roof before dawn", "to": "kasim-dawn" },
+        { "text": "Attend the war briefing", "to": "war-briefing" }
+      ]
+    },
+    "githany": {
+      "title": "Githany",
+      "art": "castle_hall",
+      "text": [
+        "Black hair, green eyes, and a way of standing that makes the room rearrange itself around her. Githany was a Jedi Padawan until she walked into Lord Kaan's camp with the Army of Light's battle plans. She tells this story the way other people show a blade.",
+        { "speaker": "githany", "line": "So you are the one who still talks to the big sad miner. How loyal. How rare, in this place. Sit. Tell me who matters here, and I'll tell you what the Jedi never guessed about me." },
+        "She is charming and she is working you, and she lets you see both because it amuses her. Within minutes she has the rankings, Sirak's habits, and the tale of Fohargh, and you could not swear you gave her any of it.",
+        { "speaker": "githany", "line": "He killed with a thought and then lost his nerve. Hm. Sirak is a wall. Walls don't need me. But a man who was strong once and wants it back? He would owe someone a great deal." }
+      ],
+      "prompt": "Her smile suggests you have already agreed to something.",
+      "choices": [
+        { "text": "Follow at a distance when she goes looking for Bane", "to": "night-archives" },
+        { "text": "Excuse yourself. The war briefing is starting", "to": "war-briefing" }
+      ]
+    },
+    "kasim-dawn": {
+      "title": "Before dawn",
+      "art": "ruins",
+      "text": [
+        "You are not the first on the roof. In the grey light Kas'im is working a single student through sequence after sequence, correcting an elbow, a hip, a breath. The student is Bane. Qordis has forbidden exactly this.",
+        "The Blademaster sees you and does not stop.",
+        { "speaker": "kasim", "line": "Qordis runs the Academy. I run the roof. He says the miner is finished. I say I have not finished with him. If you mean to carry tales, go and do it. If not, pick up a blade. Two partners teach more than one." },
+        "So you learn, all three of you, in the cold: how Sirak's double blade must be answered inside its spin, how a big man can turn Djem So's hammer into a trap. Kas'im, for the first time, fights you with a blade in each hand, then with a double blade of his own, and smiles a little at your faces."
+      ],
+      "prompt": "The sun comes up. Bane is breathing hard, and almost smiling.",
+      "choices": [
+        { "text": "Keep the secret, and see where Bane goes at night", "to": "night-archives" },
+        { "text": "Go down to the war briefing with sore arms", "to": "war-briefing" }
+      ]
+    },
+    "war-briefing": {
+      "title": "News from Ruusan",
+      "art": "throne_room",
+      "text": [
+        "Lord Kopecz stands under a holomap of Ruusan: forests, canyons, and far too much blue for the Army of Light. The apprentices are meant to study strategy. What they study is him, a Sith Lord who has actually met Jedi with a blade.",
+        { "speaker": "kopecz", "line": "General Hoth holds here and here. We outnumber him in Dark Lords three to one and we are losing ground, because every one of ours has his own opinion about how to win. Lord Kaan keeps us together. I'll give him that. He could talk a rancor into a harness." },
+        "A recording of Kaan plays: handsome, warm, a voice that makes you want to stand up. All Sith are brothers. All are equal. Together we cannot fail. Qordis nods along. Kopecz watches the apprentices' shining faces with the expression of a man counting coffins.",
+        { "speaker": "kopecz", "line": "Where's my miner? Still breathing? Good. Tell him I don't bring ore to a smelter so it can sit on the slag heap." }
+      ],
+      "prompt": "The briefing ends. Lord Orilltha is taking a class into the desert at dusk.",
+      "choices": [
+        { "text": "Carry Kopecz's message to Bane tonight", "to": "night-archives" },
+        { "text": "Join the desert exercise", "to": "desert-storm" }
+      ]
+    },
+    "night-archives": {
+      "title": "What happens after curfew",
+      "art": "library",
+      "text": [
+        "The lamp is burning in the archives again, and tonight there are two voices. Githany sits on the reading table with her boots on a priceless scroll, walking Bane through the exercises Qordis gives only to the favored: how to call the dark side up on purpose, and hold it.",
+        { "speaker": "githany", "line": "No, don't think of the Makurth. Think of Sirak's boot. There. Feel that? You never lost it. You were ashamed of it, and it sulked." },
+        "A stylus lifts from the table, then the table, then every scroll on the shelf behind her. Bane's face in the lamplight is the face of a man getting his hands back.",
+        "Githany turns her green eyes to the doorway where you are standing. She does not seem alarmed. She seems to be doing arithmetic.",
+        { "speaker": "bane", "line": "They can be trusted. Or they'd have gone to Qordis the first time." }
+      ],
+      "prompt": "Bane is vouching for you. Sirak would pay well to know what you have just seen.",
+      "choices": [
+        { "text": "Step inside and pull up a stool", "to": "pact" },
+        { "text": "Back away, and take this to Sirak", "to": "informer" }
+      ]
+    },
+    "pact": {
+      "title": "Three in the lamplight",
+      "art": "library",
+      "text": [
+        "It becomes a habit. Kas'im's blade before dawn; the Masters' classes by day, where Bane sits at the back and is ignored; and at night the archives, where Githany teaches what she has been taught and Bane teaches what he has read.",
+        "He has found the ancients' own account of themselves. A Sith Lord did not share power, he hoarded it. Githany finds this delicious. You find it treasonous. Bane finds it obvious, and that worries you more.",
+        { "speaker": "bane", "line": "In the mine, when a crew split a seam ten ways, every man went home poor. Kaan has split the dark side a thousand ways and calls it brotherhood." },
+        { "speaker": "githany", "line": "Careful, my large friend. Say that upstairs and Qordis will have you fed to the tuk'ata. Say it to me again, though. I like how it sounds." },
+        "She likes Bane's strength, you think. You are less sure she likes Bane. He, who reads everyone, does not seem to read her at all."
+      ],
+      "prompt": "Bane says he is nearly ready to face Sirak again.",
+      "choices": [
+        { "text": "Tell him to wait, and take one more lesson: Orilltha's desert trial", "to": "desert-storm" },
+        { "text": "Tell him you'll be at the ringside when he does it", "to": "rematch" }
+      ]
+    },
+    "informer": {
+      "title": "A word in Sirak's ear",
+      "art": "castle_hall",
+      "text": [
+        "You find the Zabrak in the upper gallery. Llokay and Yevra bar your way until Sirak, without turning, lifts one finger.",
+        "You tell him: the miner is training in secret, with the new woman, in the archives, and with someone else's help at dawn. You expect gratitude, or coin, or at least interest.",
+        { "speaker": "sirak", "line": "Let him train. I broke him once before the whole Academy. If he comes back stronger and I break him again, no one will ever speak his name. You thought I would run to Qordis like a frightened child? You have mistaken me for yourself." },
+        { "speaker": "llokay", "line": "He means get out. But we'll remember you came. Sirak rewards the useful. Eventually." },
+        "You go, with the feeling of having sold something for less than it cost you."
+      ],
+      "prompt": "The bell rings for Lord Orilltha's desert exercise. Or you could simply wait for the rematch everyone now expects.",
+      "choices": [
+        { "text": "Go out into the desert with the class", "to": "desert-storm" },
+        { "text": "Stay close to the ring", "to": "rematch" }
+      ]
+    },
+    "desert-storm": {
+      "title": "The desert trial",
+      "art": "mountain_pass",
+      "text": [
+        "Lord Orilltha marches the class a day's walk into the wastes and takes away the water. The lesson is to last the night. Korriban is not empty: tuk'ata hunt the ridgelines, and the old tombs breathe a cold that has nothing to do with weather.",
+        { "speaker": "orilltha", "line": "The Force will not feed you because you ask nicely. Thirst. Fear. Use them. Those who return at dawn have learned something. Those who do not have also taught the rest a lesson." },
+        "In the dark you learn to draw warmth out of your own dread, and to feel the hounds' hunger before you hear their claws. Sirak sits apart, serene, as if the desert were his by right. Githany has talked two other apprentices into standing watch for her.",
+        "And at the edge of the firelight Bane stands looking down toward the Valley of the Dark Lords, where the great tombs are, with the expression of a man reading a sign in a language he almost knows."
+      ],
+      "prompt": "Dawn. Everyone you care about has survived. The walk back is long enough to talk.",
+      "choices": [
+        { "text": "Walk beside Bane and ask what he saw in the valley", "to": "rematch" },
+        { "text": "Walk behind Sirak and learn the rhythm of his stride", "to": "rematch" }
+      ]
+    },
+    "rematch": {
+      "title": "The second duel",
+      "art": "ruins",
+      "text": [
+        "Bane challenges Sirak on a morning of red wind. The whole Academy climbs to the roof. Qordis comes himself, rings glittering. Kas'im's face shows nothing at all.",
+        "For the first minute it is the old story: the double blade a blur, the miner giving ground. Then you see it is ground he means to give. He has let Sirak believe in the old Bane, and when the Zabrak commits to a spinning flourish, Bane steps inside it, exactly as Kas'im taught.",
+        "What follows is short and terrible. The dark side comes when he calls it now. He smashes the double blade from Sirak's hands, breaks his arm, his knee, his pride, and stands over the unbeaten champion of Korriban with his blade raised for the last blow.",
+        { "speaker": "githany", "line": "Finish it. Finish it!" },
+        "He does not. He looks down at Sirak, sees something there he recognises, and walks out of the ring. Githany's face closes like a door. Qordis's nails tap, tap, tap on the arm of his chair."
+      ],
+      "prompt": "The circle breaks up in whispers. Three people need watching, and you can follow only one.",
+      "choices": [
+        { "text": "Go after Bane", "to": "bane-mercy" },
+        { "text": "Follow the Zabrak carrying Sirak to the healers", "to": "sirak-bedside" },
+        { "text": "Stay. Lord Qordis is beckoning you with one ringed finger", "to": "qordis-summons" }
+      ]
+    },
+    "bane-mercy": {
+      "title": "Mercy, or something like it",
+      "art": "camp",
+      "text": [
+        "You find him on the eastern parapet at dusk. Githany has been there before you. Her voice carried down the stairs: weak, sentimental, a waste of her time. She passes you without a glance.",
+        { "speaker": "bane", "line": "She's angry I didn't kill him. So is Kas'im, I think, though he'd never say so. I had him. I looked at him lying there and I saw a miner on the floor of a cantina with the whole room laughing. I've been that man. I didn't need to kill that man." },
+        { "speaker": "bane", "line": "Was it mercy? The Sith don't have mercy. Or did I only want him alive to know I'm better? I can't tell. That's what troubles me. Qordis can't tell me either. He only knows what Kaan told him to think." },
+        "Below, the lamps come on in the Valley of the Dark Lords: only reflected sunset, but it looks like someone has lit the tombs."
+      ],
+      "prompt": "He is deciding something. You can see it in his shoulders.",
+      "choices": [
+        { "text": "\"Qordis wants to see you. I'd hear what he says before you do anything.\"", "to": "qordis-summons" },
+        { "text": "\"If the Masters have no answers, ask the ones in the valley. I'll walk with you.\"", "to": "valley" }
+      ]
+    },
+    "sirak-bedside": {
+      "title": "The fallen champion",
+      "art": "house_interior",
+      "text": [
+        "Sirak lies splinted and bound in the ward where Bane once floated. Llokay paces. Yevra sits by the cot with a face like a drawn knife. Nobody has laughed in the corridor: fear lasts longer than contempt.",
+        { "speaker": "sirak", "line": "He let me live. Do you understand the insult? He thinks I am nothing to fear. He has made me a thing to pity." },
+        { "speaker": "llokay", "line": "He's gone soft on that Jedi witch, and she's already sick of him. She was here an hour ago, sweet as poison. She says she can put the miner in front of us somewhere quiet. No ring. No rules. No Masters." },
+        "Sirak's yellow eyes turn to you. For once he is truly looking.",
+        { "speaker": "sirak", "line": "You were at his side. You could be at mine. When I am Sith'ari, I will remember who was standing where." }
+      ],
+      "prompt": "He is not a wall any longer. He is a wounded animal with two healthy ones beside him.",
+      "choices": [
+        { "text": "Give no answer. Qordis has sent for you anyway", "to": "qordis-summons" },
+        { "text": "Give no answer, and go to find Bane before they do", "to": "valley" }
+      ]
+    },
+    "qordis-summons": {
+      "title": "The Master of the Academy",
+      "art": "throne_room",
+      "text": [
+        "Qordis's chamber is hung with tapestries and smells of incense: a rich man's rooms on a dead world. He does not offer you a seat.",
+        { "speaker": "qordis", "line": "Your friend has been in my archives. He fills his head with Revan and Darth this and Darth that, and now he spares an enemy in my ring and thinks himself a philosopher. Kopecz finds raw power in a trench and imagines it is a Sith Lord." },
+        { "speaker": "qordis", "line": "The Brotherhood needs unity. Not a miner with ideas. You are close to him. You will tell me what he reads, whom he speaks with, where he goes. In return your name will be placed before Lord Kaan with my recommendation. You will go to Ruusan a Dark Lord. Do you understand how rarely I make such offers?" },
+        "The rings click. He is already certain of your answer. It occurs to you that in a year here, nobody has ever seen Lord Qordis fight."
+      ],
+      "prompt": "A Dark Lord's title, for the price of a friend.",
+      "choices": [
+        { "text": "Bow, agree to nothing, and go to warn Bane", "to": "valley" },
+        { "text": "Bow and withdraw. Githany is waiting in the corridor", "to": "githany-plot" },
+        { "text": "Accept. This is what you came to Korriban for", "to": "end-rings" }
+      ]
+    },
+    "valley": {
+      "title": "The road to the tombs",
+      "art": "mountain_pass",
+      "text": [
+        "He is packing when you find him: a waterskin, a glowrod, nothing else.",
+        { "speaker": "bane", "line": "The old texts say the spirits of the Dark Lords lingered in their tombs to teach whoever was worthy. Qordis says the tombs were picked clean a thousand years ago. One of them is wrong. I mean to know which before I listen to another lecture." },
+        "The Valley of the Dark Lords is a day down the cliff road, forbidden without leave, haunted by tuk'ata. He will go whether or not you do. He would rather, you think, not go alone, though he would cut out his tongue before saying so.",
+        "Behind you, in the Academy, a door closes softly. Someone has been listening. You catch a trace of a scent Githany wears."
+      ],
+      "prompt": "Bane shoulders the pack.",
+      "choices": [
+        { "text": "Go with him into the valley", "to": "tombs" },
+        { "text": "Let him go, and find out what Githany means to do with what she heard", "to": "githany-plot" }
+      ]
+    },
+    "tombs": {
+      "title": "The Valley of the Dark Lords",
+      "art": "crypt",
+      "text": [
+        "The tombs are vast and they are empty. Statues with their faces hacked off. Sarcophagi cracked open like eggs. For days Bane goes from one to the next, sits in the dark, and opens himself to whatever might answer.",
+        "Nothing answers. No spirit. No whisper. The Jedi looted what the grave robbers left, and whatever dwelt here has gone, or never was.",
+        "On the fourth night he comes out of the last tomb and sits down in the dust. You have never seen him look defeated, not in the bacta tank, not on the outcast's bench. He does not look defeated now. He looks like a man who has finished adding a long column of figures.",
+        { "speaker": "bane", "line": "Nothing. The dark side isn't dead. I can feel it in me. It's the Sith who are dead. Qordis, Kaan, all of them, warming their hands at a fire they've let burn down to share. The ancients wouldn't speak to me because there's no one left worth speaking to. Not yet." }
+      ],
+      "prompt": "He stands, and turns back toward the Academy.",
+      "choices": [
+        { "text": "\"Then what will you do?\"", "to": "ambush" },
+        { "text": "\"Whatever it is, Sirak will be waiting. Let me go in first.\"", "to": "ambush" }
+      ]
+    },
+    "githany-plot": {
+      "title": "Githany's arithmetic",
+      "art": "castle_hall",
+      "text": [
+        "She draws you into an alcove as if for a kiss, and speaks very low.",
+        { "speaker": "githany", "line": "Bane has gone to mope among the tombs. When he comes back, tired and alone, Sirak and his two pets will be waiting in the archives. I told them when. Don't look so shocked. It's a test. If Bane is what I hoped, he will kill all three and I'll be the clever woman who delivered his enemies to him. If he isn't, I've made a friend of the Sith'ari." },
+        { "speaker": "githany", "line": "Either way I win. The question is you. You know both sides and you know the hour. I'm curious what a loyal little apprentice does with that. So is Sirak. He asked for you by name." },
+        "She pats your cheek and is gone. Up the corridor Kas'im's roof door stands open on the evening, and for a moment the simplest thing in the galaxy seems to be a blade and nobody's schemes at all."
+      ],
+      "prompt": "You know the hour and the place.",
+      "choices": [
+        { "text": "Meet Bane on the cliff road and stand with him", "to": "ambush" },
+        { "text": "Go to the archives with Sirak's party", "to": "ambush-sirak" },
+        { "text": "Walk away from all of them and climb to Kas'im's roof", "to": "end-blade" }
+      ]
+    },
+    "ambush": {
+      "title": "The archives, by night",
+      "art": "library",
+      "text": [
+        "They are waiting among the stacks. Llokay and Yevra come out of the dark first, real lightsabers in their hands, stolen from the armory: red blades, no pelko barbs, no rules. Sirak comes last, limping, the twin blades of a true saberstaff hissing at either end.",
+        { "speaker": "sirak", "line": "No ring. No Masters. No mercy to hide behind, miner." },
+        "Bane has only a training blade and what he found, or did not find, in the valley. It is enough. He does not fight like a student now. Llokay dies before his sister has finished her first cut. Yevra dies screaming his name. You are in it too, a blade turned, a blow taken that was meant for Bane's back, and you will carry the scar.",
+        "Then Sirak is on his knees among the burning scrolls, weaponless, and the unbeaten Zabrak is saying the words nobody ever thought to hear from him: please, I yield, I will serve you.",
+        { "speaker": "bane", "line": "I spared you once and called it strength. I know what it was now." },
+        "The red blade he has taken from Llokay's hand comes down. This time he does not walk away."
+      ],
+      "prompt": "Three bodies. The Academy is waking. Bane looks at you across the smoke.",
+      "choices": [
+        { "text": "\"Go. I'll tell them how it was.\"", "to": "landing" },
+        { "text": "\"Wherever you're going, you'll need a ship. I know which one is fuelled.\"", "to": "landing" }
+      ]
+    },
+    "ambush-sirak": {
+      "title": "The wrong side of the stacks",
+      "art": "library",
+      "text": [
+        "You wait in the dark with the three Zabrak. Llokay hands you a real lightsaber from the armory; it is heavier than a training blade and hums against your palm. Sirak says nothing. He leans on a saberstaff and breathes through the pain of his knee.",
+        "Footsteps on the stair. One man. He stops at the door, and you realise he has known you were all here since the top of the steps.",
+        { "speaker": "bane", "line": "Four. I counted three on the way down, and one I didn't want to count." },
+        "He is looking at you. Not angry. That is the worst of it. It is the look of a sabacc player turning over a card he had hoped was something else.",
+        "Then Llokay lunges, and there is no more time."
+      ],
+      "prompt": "The blade is live in your hand.",
+      "choices": [
+        { "text": "You chose your side. Strike with the Zabrak", "to": "end-sirak" },
+        { "text": "Turn your blade on Yevra instead", "to": "landing" }
+      ]
+    },
+    "landing": {
+      "title": "The landing field",
+      "art": "castle_gate",
+      "text": [
+        "Dawn on the field where you first saw him. A fast courier, the Valcyn, sits fuelled on the pad: Lord Qordis's own ship. Bane walked into Qordis's chambers an hour ago and told him he was taking it. Qordis, who could have called every Master in the temple, looked at what was standing in front of him and found a reason to agree.",
+        "Kas'im is at the foot of the ramp, arms folded.",
+        { "speaker": "kasim", "line": "The Brotherhood has summoned the whole Academy to Ruusan. Kaan needs every blade. You could be a Dark Lord by nightfall, and you are leaving. For what? Scrolls?" },
+        { "speaker": "bane", "line": "For what the scrolls point to. There's a world called Lehon. Revan left something there. The Brotherhood is a lie, Master Kas'im. A thousand Dark Lords, and the dark side spread so thin between them it can't beat one stubborn Jedi. I won't be one of a thousand." },
+        "The Blademaster shakes his head slowly, fond and furious. Then Bane turns to you.",
+        { "speaker": "bane", "line": "I never asked why you stood where you stood. I'm asking now what you'll do next. Kaan's summons is for all of us. I can't take you where I'm going. But I'd know there was one person on Ruusan with their eyes open." }
+      ],
+      "prompt": "The engines are warming. Three roads lead off this field.",
+      "choices": [
+        { "text": "\"Go to Lehon. I'll be your eyes on Ruusan until you come.\"", "to": "end-ally" },
+        { "text": "\"You're wrong about Kaan. I'm going to Ruusan to win a war.\"", "to": "end-ruusan" },
+        { "text": "Say nothing, and go to stand beside Kas'im", "to": "end-blade" }
+      ]
+    },
+    "end-ally": {
+      "title": "Eyes open",
+      "art": "castle_gate",
+      "text": [
+        "He grips your forearm, a miner's grip. The Valcyn lifts, turns, and is a spark, then nothing.",
+        "You go to Ruusan with the others. You are made a Dark Lord in a tent in the rain, one of hundreds, and you bow to Lord Kaan and feel how warm his voice is and how thin the power runs. You watch. You remember. You keep away from caves.",
+        "When a figure in black armour comes striding at last out of the forest, taller than you remembered, calling himself by a title Qordis swore was dust, you are the only one in the camp who is not surprised. Darth Bane's eyes find you across the fire.",
+        "He has a plan for the Brotherhood. He has a rule he has not yet spoken aloud, and it has room in it for exactly two. But he remembers who kept a place at the table, and when he tells you quietly to be a long way from the caverns on the last night, you go.",
+        "You are, perhaps, the only one who ever walked away from Darth Bane with his thanks."
+      ],
+      "ending": { "title": "The One He Warned", "tone": "good" }
+    },
+    "end-ruusan": {
+      "title": "The Brotherhood",
+      "art": "cave",
+      "text": [
+        "He nods once, without anger, and climbs the ramp. You never speak again.",
+        "Ruusan is mud, forest and seven battles. You are made a Dark Lord with Githany and the rest, and for a while Lord Kaan's voice is enough: brothers, equals, victory tomorrow. Kas'im is sent after the deserter and does not return. Nobody tells you why.",
+        "Then a stranger in black armour walks into the camp and calls himself Darth Bane, and Kaan, smiling, welcomes him. Bane gives the Brotherhood a gift: an ancient ritual, a weapon to end the war in one stroke, if every Dark Lord will join his will to it.",
+        "In the cavern, shoulder to shoulder with a thousand equals, you feel the thought bomb begin to build and understand at last what he meant on the landing field. One of a thousand. You look for him in the circle. He is not in it.",
+        "The light is very bright, and then there is no Brotherhood at all."
+      ],
+      "ending": { "title": "One of a Thousand", "tone": "bad" }
+    },
+    "end-blade": {
+      "title": "The roof",
+      "art": "ruins",
+      "text": [
+        "Kas'im looks at you sideways when you take your place beside him, and for once says nothing dry.",
+        "You have had enough of prophecies and plots. Githany's sums, Qordis's rings, Sirak's destiny, Bane's terrible patience: none of it is yours. What is yours is the thing the Twi'lek taught you in the cold before dawn, a blade and the truth of whether you are good enough.",
+        { "speaker": "kasim", "line": "Qordis will take the Academy to Ruusan and I must go with it. Someone should keep the roof swept. The forms are older than the Brotherhood. They will be here when it is gone. Seven of them. You know one badly. Stay, and learn the rest properly." },
+        "So you stay on Korriban, alone with the wind and the tombs and the seven forms, while the Sith march away to a war that swallows every one of them. You never become a Dark Lord. You become, in time, very difficult to kill.",
+        "Years later a rumour reaches even this dead world: there are only two Sith now. You run your sequences on the empty roof and think of a big man who hit too hard, and smile."
+      ],
+      "ending": { "title": "Keeper of the Forms", "tone": "neutral" }
+    },
+    "end-sirak": {
+      "title": "Counted",
+      "art": "library",
+      "text": [
+        "You strike. It is a good cut, the best Kas'im ever taught you, and it is aimed at a man who learned beside you and knows exactly how you retreat.",
+        "Bane does not even use a blade. The Force closes on your chest like a tunnel collapse, the same crushing weight that lifted Fohargh off the roof, and the lightsaber falls from fingers you can no longer feel. Through the roaring in your ears you hear Llokay die, and Yevra, and then Sirak begging.",
+        "The last thing you see is the miner standing over you among the burning scrolls. There is no hatred in his face. He closes his hand gently, the way a man puts out a lamp he has no more use for.",
+        "In the morning Lord Qordis records four apprentices lost to a training accident, and the Academy leaves for Ruusan one Dark Lord short."
+      ],
+      "ending": { "title": "The Fourth Body", "tone": "bad" }
+    },
+    "end-rings": {
+      "title": "Qordis's creature",
+      "art": "throne_room",
+      "text": [
+        "You tell Qordis everything: the scrolls, the dawn lessons, the valley. He listens with his eyes half closed and gives you a ring from his own finger, a small one.",
+        "It makes no difference. Bane goes to the tombs anyway. Sirak and his followers die in the archives anyway. Bane takes Qordis's own ship off the landing field, and Qordis, who has your reports in his sleeve and every Master in the temple at his call, stands aside and lets him. You see then what your patron is.",
+        "On Ruusan you are a Dark Lord, as promised, one more voice agreeing with Lord Kaan. When a man in black armour arrives calling himself Darth Bane, his gaze passes over you and stops, briefly, on the ring. He says nothing. He never says anything to you again.",
+        "Qordis tells you to stay close to him, to trust in the Brotherhood, to come down into the caverns for the great ritual. He is still wearing all his rings when the light takes you both."
+      ],
+      "ending": { "title": "A Small Ring", "tone": "bad" }
+    }
+  }
+}
