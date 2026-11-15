@@ -25,6 +25,7 @@ try {
 writeFileSync(join(dist, '.nojekyll'), '');
 rmSync(join(dist, '.git'), { recursive: true, force: true });
 run('git init -q -b gh-pages', dist);
+run('git config core.autocrlf false', dist);
 run('git add -A', dist);
 run('git -c user.name="deploy" -c user.email="deploy@localhost" commit -q -m "Deploy"', dist);
 run(`git push -f "${remote}" gh-pages`, dist);
