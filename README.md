@@ -25,3 +25,12 @@ npm run deploy:gh-pages   # publish dist/ to the gh-pages branch
 - `ash_and_ambition.quest.json`: *Ash and Ambition*, 12 scenes
 
 These are unofficial fan fiction for testing, not affiliated with Lucasfilm.
+
+## Live test build
+
+https://justinspearlord.github.io/choose-your-own-path-stories/ (update it with `npm run build`, then `npm run deploy:gh-pages`)
+
+One-tap imports:
+
+- [The Miner of Korriban](https://justinspearlord.github.io/choose-your-own-path-stories/#/import?url=https%3A%2F%2Fjustinspearlord.github.io%2Fchoose-your-own-path-stories%2Fstories%2Fkorriban_academy.quest.json)
+- [Ash and Ambition](https://justinspearlord.github.io/choose-your-own-path-stories/#/import?url=https%3A%2F%2Fjustinspearlord.github.io%2Fchoose-your-own-path-stories%2Fstories%2Fash_and_ambition.quest.json)
